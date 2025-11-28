@@ -1,0 +1,75 @@
+/* src/components/Navbar.css */
+.navbar {
+  background-color: var(--white);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.logo span {
+  color: var(--primary-color);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: var(--text-gray);
+  font-weight: 500;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--primary-color);
+}
+
+.nav-link.active {
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .nav-links, .desktop-cta {
+    display: none;
+  }
+  
+  .mobile-toggle {
+    display: block;
+  }
+
+  .mobile-menu {
+    border-top: 1px solid #eee;
+    padding: 1rem;
+    background: white;
+  }
+
+  .mobile-link {
+    display: block;
+    padding: 0.75rem 0;
+    font-size: 1.1rem;
+  }
+}
