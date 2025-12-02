@@ -1,36 +1,54 @@
 /* src/pages/Home.css */
 
-/* 1. The Fixed Background Container */
 .home-container {
-  background-position: center;
-  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100%;
+  
+  /* CHANGE THIS BACK TO 'center top' */
+  /* The image must start at the top for the header transparency to work */
+  background-position: center top; 
+  
   background-size: cover;
-  background-attachment: fixed; /* THIS IS KEY: Image stays still while you scroll */
-  min-height: 100vh;
-  width: 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  position: relative;
+  
+  /* We don't need the black background anymore since the image covers everything */
+  background-color: transparent; 
 }
 
-/* 2. The Dark Overlay */
+/* Dark overlay */
 .home-overlay {
-  background-color: rgba(0, 0, 0, 0.75); /* Dark tint so text pops */
+  /* I adjusted the gradient to be lighter at the top (0.2) */
+  /* This helps the "Manoj Brothers" board show through the header clearly */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,   /* Top is lighter so header looks glassy */
+    rgba(0, 0, 0, 0.6) 100%  /* Bottom is darker for contrast */
+  );
   min-height: 100vh;
   width: 100%;
-  padding-bottom: 80px;
 }
 
-/* 3. Glassmorphism Utility Class */
-.glass-panel {
-  background: rgba(255, 255, 255, 0.1); /* 10% white transparency */
-  backdrop-filter: blur(10px);           /* Blurs the image behind the card */
-  -webkit-backdrop-filter: blur(10px);   /* Safari support */
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Thin white border */
-  border-radius: 16px;
-  padding: 2rem;
-  color: white;
-  transition: transform 0.3s ease;
+/* Ensure sections have proper spacing */
+.home-overlay > div {
+  width: 100%;
 }
 
-.glass-panel:hover {
-  background: rgba(255, 255, 255, 0.15);
-  transform: translateY(-5px);
+/* First section (hero) */
+#home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Other sections */
+#products,
+#about,
+#gallery,
+#testimonials,
+#contact {
+  width: 100%;
+  padding: 4rem 0;
 }

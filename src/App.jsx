@@ -2,8 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
-import About from './pages/About';
-import Products from './pages/Products';
+import Products from './pages/Products'; // Keep this for the full product list page
 
 function App() {
   return (
@@ -11,8 +10,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="products" element={<Products />} />
+          {/* This remains a separate page for when users click "View Details" */}
+          <Route path="products" element={<Products />} /> 
         </Route>
       </Routes>
     </BrowserRouter>
