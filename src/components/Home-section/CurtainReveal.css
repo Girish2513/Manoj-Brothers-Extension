@@ -1,0 +1,79 @@
+/* src/components/Home-section/CurtainReveal.css */
+
+/* The Curtain: Fixed on top of everything */
+.curtain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 9999; /* Highest priority */
+  
+  /* --- CHANGE 1: PREMIUM BACKGROUND --- */
+  /* Instead of solid black, use a dark radial gradient.
+     It's charcoal gray in the center, fading to pure black at edges. */
+  background: radial-gradient(circle at center, #1a1a1a 0%, #000000 80%);
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* --- CHANGE 2: SLOWER TIMING --- */
+  /* 1. Wait 2.5s (let the logo sit there).
+     2. Then take 2.5s to slide up slowly and dramatically.
+  */
+  animation: slideCurtainUp 2.5s cubic-bezier(0.87, 0, 0.13, 1) forwards;
+  animation-delay: 2.5s; 
+}
+
+/* The Content (Logo) */
+.curtain-content {
+  text-align: center;
+  /* Fade out logo slowly before curtain moves */
+  /* Starts at 1.5s, takes 1s to fade out */
+  animation: fadeOutLogo 1s ease-out forwards;
+  animation-delay: 1.5s;
+}
+
+.curtain-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 4rem); /* Responsive size */
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 3px; /* More spacing for luxury feel */
+  /* Added a subtle shadow to make it pop off the dark gradient */
+  text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.mb-red {
+  color: #DC2626;
+}
+
+/* --- KEYFRAMES --- */
+
+@keyframes slideCurtainUp {
+  0% {
+    transform: translateY(0);
+    /* Optional: slight scale up right before it moves for drama */
+    scale: 1;
+  }
+  100% {
+    transform: translateY(-100%);
+    scale: 1.05;
+    display: none; 
+  }
+}
+
+@keyframes fadeOutLogo {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.95); /* Subtle shrink */
+    filter: blur(4px); /* Subtle blur as it fades */
+  }
+}
