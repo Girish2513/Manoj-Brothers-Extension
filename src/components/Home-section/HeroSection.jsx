@@ -1,71 +1,53 @@
-import React, { useState, useEffect } from 'react';
+
+import React from 'react';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Phone } from 'lucide-react';
 import './HeroSection.css';
+import heroBg from '../../assets/background.jpg'; // Using existing asset but improving presentation
 
 const HeroSection = () => {
-  // 1. State to track the mouse offset
-  const [offset, setOffset] = useState({ x: 0, y: 0 });
-
-  // 2. Effect to listen for mouse movement
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      // Get screen dimensions
-      const { innerWidth, innerHeight } = window;
-      
-      // Calculate how far mouse is from center (-1 to +1)
-      // Multiply by 25 to control the "strength" of the movement (25px max)
-      const x = (e.clientX / innerWidth - 0.5) * 25; 
-      const y = (e.clientY / innerHeight - 0.5) * 25; 
-      
-      setOffset({ x, y });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    
-    // Cleanup listener when component unmounts
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
   return (
-    <div className="hero-wrapper">
-      
-      <div 
-        className="hero-inner"
-        // 3. Apply the Parallax Transform here
-        // We use negative values (-offset.x) to make it move OPPOSITE to the mouse
-        style={{ 
-          transform: `translate(${-offset.x}px, ${-offset.y}px)` 
-        }}
-      >
-        
-        {/* Est Badge */}
-        <span className="est-badge">Est. 2008</span>
+    <section className="hero-section">
+      <div className="hero-bg-wrapper">
+        <div className="hero-overlay"></div>
+        <img src={heroBg} alt="Premium Flooring Showroom" className="hero-bg-image" />
+      </div>
 
-        {/* Main Headline */}
+      <div className="container hero-content">
+        <span className="hero-label">Create Your Dream Home</span>
+
         <h1 className="hero-title">
-          Transform Your <span>Space</span>
+          Transform Your Space with <br />
+          <span className="text-gradient">Premium Flooring.</span>
         </h1>
 
-        {/* Subtitle */}
         <p className="hero-subtitle">
-          Hyderabad's Premier PVC Flooring & Interior Wholesaler. <br/>
-          Direct Importers & Stockists.
+          Hyderabad’s Trusted Wholesaler Since 2008. Experience the perfect blend of
+          luxury, durability, and style.
         </p>
 
-        {/* Buttons */}
-        <div className="hero-buttons">
-          <Link to="/products" className="btn btn-primary" style={{ minWidth: '180px' }}>
+        <div className="hero-cta-group">
+          <Link to="/products" className="btn btn-primary">
             Explore Collection
           </Link>
-          
-          <a href="https://wa.me/919849020651" className="btn-whatsapp">
-            <Phone size={18} style={{ marginRight: '8px' }} /> WhatsApp Now
-          </a>
+          <Link to="/contact" className="btn btn-outline">
+            Visit Showroom <ArrowRight size={18} style={{ marginLeft: '8px' }} />
+          </Link>
         </div>
 
+        <div className="hero-stats">
+          <div className="stat-item">
+            <span className="stat-number">15+</span>
+            <span className="stat-label">Years of Trust</span>
+          </div>
+          <div className="stat-separator"></div>
+          <div className="stat-item">
+            <span className="stat-number">500+</span>
+            <span className="stat-label">Premium Projects</span>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

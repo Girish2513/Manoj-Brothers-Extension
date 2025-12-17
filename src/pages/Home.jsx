@@ -1,56 +1,33 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import HeroSection from '../components/Home-section/HeroSection';
 import BestSellers from '../components/Home-section/BestSellers';
-import AboutUs from '../components/Home-section/AboutUs';
-import Gallery from '../components/Home-section/Gallery';
+import WhyChooseUs from '../components/Home-section/WhyChooseUs';
+import Collections from '../components/Home-section/Collections';
 import Testimonials from '../components/Home-section/Testimonials';
-import Contact from '../components/Home-section/Contact';
+import FinalCTA from '../components/Home-section/FinalCTA';
 
-// CORRECTED IMPORT PATH:
-// Added "/Home-section" to the path so it finds the file
 import CurtainReveal from '../components/Home-section/CurtainReveal';
 
-import './Home.css';
-
-// Import your background image
-import bgImage from '../assets/background.jpg'; 
-
 const Home = () => {
+  // Scroll to top on mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <div 
-      className="home-container" 
-      style={{ backgroundImage: `url(${bgImage})` }}
-    >
-      {/* The Curtain Reveal Component */}
+    <div className="home-page">
+      <Helmet>
+        <title>Home | Manoj Brothers Extension</title>
+        <meta name="description" content="Explore our premium collection of flooring, artificial grass, and interior solutions. Transform your space with Manoj Brothers Extension." />
+      </Helmet>
       <CurtainReveal />
-
-      <div className="home-overlay">
-        
-        <div id="home">
-          <HeroSection />
-        </div>
-
-        <div id="products">
-          <BestSellers />
-        </div>
-
-        <div id="about">
-          <AboutUs />
-        </div>
-
-        <div id="gallery">
-          <Gallery />
-        </div>
-
-        <div id="testimonials">
-          <Testimonials />
-        </div>
-
-        <div id="contact">
-          <Contact />
-        </div>
-        
-      </div>
+      <HeroSection />
+      <BestSellers />
+      <WhyChooseUs />
+      <Collections />
+      <Testimonials />
+      <FinalCTA />
     </div>
   );
 };

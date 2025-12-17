@@ -1,47 +1,63 @@
+
 import React from 'react';
-import { Star } from 'lucide-react';
+import { Star, Quote } from 'lucide-react';
 import './Testimonials.css';
+
+const testimonials = [
+  {
+    id: 1,
+    name: 'Rajesh Kumar',
+    role: 'Interior Designer',
+    text: 'Manoj Brothers has been my go-to for premium flooring for 5 years. The quality and finish are unmatched in Hyderabad.',
+    rating: 5
+  },
+  {
+    id: 2,
+    name: 'Priya Sharma',
+    role: 'Architect',
+    text: 'Their collection of artificial grass and vinyl options is extensive. The durability of their products is incredible.',
+    rating: 5
+  },
+  {
+    id: 3,
+    name: 'Vikram Reddy',
+    role: 'Homeowner',
+    text: 'I transformed my entire balcony with their artificial grass. It looks so natural and feels premium.',
+    rating: 5
+  }
+];
 
 const Testimonials = () => {
   return (
-    <div className="testimonials-container">
-      <div className="section-header">
-        <h2 className="section-title">Client Stories</h2>
-        <div className="title-underline"></div>
-      </div>
-      
-      <div className="testimonials-grid">
-        <div className="testimonial-glass-card">
-          <div className="stars">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} fill="#FFD700" stroke="none" size={20} />
-            ))}
-          </div>
-          <p className="review-text">"Best wholesaler in Gowliguda. I got flooring for my entire office at very good rates."</p>
-          <h4 className="client-name">- Rahul Reddy</h4>
+    <section className="testimonials-section section-padding">
+      <div className="container">
+        <div className="section-header-center">
+          <span className="section-tag-light">Testimonials</span>
+          <h2 className="section-title-light">Client Stories</h2>
         </div>
 
-        <div className="testimonial-glass-card">
-          <div className="stars">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} fill="#FFD700" stroke="none" size={20} />
-            ))}
-          </div>
-          <p className="review-text">"The artificial grass quality is amazing. My balcony looks beautiful now!"</p>
-          <h4 className="client-name">- Saniya Mirza</h4>
-        </div>
+        <div className="testimonials-grid">
+          {testimonials.map((item) => (
+            <div key={item.id} className="testimonial-card">
+              <Quote size={40} className="quote-icon" />
+              <p className="testimonial-text">"{item.text}"</p>
 
-        <div className="testimonial-glass-card">
-          <div className="stars">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} fill="#FFD700" stroke="none" size={20} />
-            ))}
-          </div>
-          <p className="review-text">"Professional service and huge stock available. Highly recommended."</p>
-          <h4 className="client-name">- Amit Patel</h4>
+              <div className="testimonial-footer">
+                <div className="testimonial-author">
+                  <h4 className="author-name">{item.name}</h4>
+                  <span className="author-role">{item.role}</span>
+                </div>
+                <div className="testimonial-rating">
+                  {[...Array(item.rating)].map((_, i) => (
+                    <Star key={i} size={16} fill="#C3002F" color="#C3002F" />
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

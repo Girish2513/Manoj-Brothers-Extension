@@ -7,13 +7,13 @@
   left: 0;
   width: 100%;
   height: 80px;
-  
+
   /* Completely transparent - background image visible */
   background-color: transparent;
-  
+
   z-index: 1000;
   border-bottom: 1px solid transparent;
-  
+
   /* Smooth transition for the effect */
   transition: all 0.4s ease-in-out;
 }
@@ -35,7 +35,7 @@
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 60px; 
+  padding: 0 60px;
 }
 
 /* Logo Styling */
@@ -56,7 +56,7 @@
 }
 
 .logo-mb {
-  color: #DC2626; 
+  color: #DC2626;
 }
 
 .logo-ext {
@@ -68,7 +68,8 @@
   display: flex;
   align-items: center;
   gap: 2.5rem;
-  margin-left: auto; /* This pushes the menu to the right */
+  margin-left: auto;
+  /* This pushes the menu to the right */
 }
 
 .nav-link {
@@ -110,18 +111,24 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 5px; /* Thickness of the red line */
+  height: 5px;
+  /* Thickness of the red line */
   background: transparent;
-  z-index: 2000; /* Must be on top of the navbar background */
+  z-index: 2000;
+  /* Must be on top of the navbar background */
 }
 
 /* The Moving Red Line */
 .scroll-bar {
   height: 100%;
-  background-color: #DC2626; /* Brand Red */
-  width: 0%; /* Starts at 0 */
-  transition: width 0.1s ease-out; /* Makes the movement smooth */
-  box-shadow: 0 0 10px rgba(220, 38, 38, 0.6); /* Adds a nice glow */
+  background-color: #DC2626;
+  /* Brand Red */
+  width: 0%;
+  /* Starts at 0 */
+  transition: width 0.1s ease-out;
+  /* Makes the movement smooth */
+  box-shadow: 0 0 10px rgba(220, 38, 38, 0.6);
+  /* Adds a nice glow */
 }
 
 /* Mobile Styling */
@@ -135,31 +142,31 @@
   .navbar-container {
     padding: 0 30px;
   }
-  
+
   .nav-menu {
     gap: 2rem;
   }
 }
 
 @media (max-width: 768px) {
-  .navbar { 
+  .navbar {
     background-color: rgba(26, 26, 26, 0.98);
   }
-  
-  .navbar.scrolled { 
-    background-color: rgba(0, 0, 0, 0.98); 
+
+  .navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.98);
   }
 
   .navbar-container {
     padding: 0 20px;
   }
 
-  .nav-menu { 
-    display: none; 
+  .nav-menu {
+    display: none;
   }
-  
-  .mobile-icon { 
-    display: block; 
+
+  .mobile-icon {
+    display: block;
   }
 
   .mobile-menu {
@@ -186,11 +193,11 @@
     letter-spacing: 0.5px;
     transition: color 0.3s ease;
   }
-  
+
   .mobile-link:hover {
     color: #DC2626;
   }
-  
+
   .mobile-link.home-active {
     color: #DC2626;
   }

@@ -1,0 +1,122 @@
+/* src/pages/FAQ.css */
+.faq-page {
+    font-family: var(--font-body, sans-serif);
+    color: var(--text-dark, #333);
+    background-color: #f9fafb;
+    min-height: 100vh;
+    padding-bottom: 6rem;
+}
+
+.faq-hero {
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+    color: white;
+    padding: 8rem 2rem 6rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.faq-title {
+    font-family: var(--font-heading, serif);
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #ffffff, #e5e5e5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.faq-subtitle {
+    font-size: 1.25rem;
+    color: #9ca3af;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.faq-item {
+    background: white;
+    margin-bottom: 1rem;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: #d1d5db;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    padding: 1.5rem;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1f2937;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.faq-question:hover {
+    color: #DC2626;
+}
+
+.faq-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+    font-weight: 400;
+    color: #9ca3af;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+    color: #DC2626;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0 1.5rem;
+    color: #4b5563;
+    line-height: 1.6;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px;
+    /* Adjust based on content */
+    padding-bottom: 1.5rem;
+}
+
+.faq-cta-box {
+    background: #DC2626;
+    color: white;
+    text-align: center;
+    padding: 3rem;
+    border-radius: 20px;
+    margin-top: 4rem;
+}
+
+.faq-cta-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.faq-cta-link {
+    color: white;
+    font-weight: 700;
+    text-decoration: underline;
+}

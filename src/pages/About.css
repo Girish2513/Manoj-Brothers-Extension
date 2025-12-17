@@ -1,5 +1,33 @@
 /* src/pages/About.css */
 
+/* Page Header (Consistent Hero Style) */
+.page-header {
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  color: white;
+  padding: 8rem 2rem 6rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-header h1 {
+  font-family: var(--font-heading, serif);
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #ffffff, #e5e5e5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.page-header p {
+  font-size: 1.25rem;
+  color: #9ca3af;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 /* Mission Section */
 .mission-flex {
   display: flex;
@@ -17,7 +45,7 @@
 .mission-img {
   width: 100%;
   border-radius: 8px;
-  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
   height: 400px;
   object-fit: cover;
 }
@@ -38,7 +66,8 @@
   bottom: 0;
   left: 0;
   width: 2px;
-  background-color: #fecaca; /* Light red */
+  background-color: #fecaca;
+  /* Light red */
 }
 
 .timeline-item {
@@ -54,7 +83,8 @@
 /* The dot on the timeline */
 .timeline-dot {
   position: absolute;
-  left: -9px; /* Adjusts dot to sit on the line */
+  left: -9px;
+  /* Adjusts dot to sit on the line */
   top: 5px;
   width: 16px;
   height: 16px;
@@ -81,7 +111,8 @@
 }
 
 .pillar-icon-circle {
-  background-color: #fee2e2; /* Very light red */
+  background-color: #fee2e2;
+  /* Very light red */
   color: var(--primary-color);
   width: 80px;
   height: 80px;

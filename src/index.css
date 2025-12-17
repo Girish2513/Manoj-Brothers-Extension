@@ -1,15 +1,21 @@
 /* src/index.css */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --primary-color: #DC2626; /* The specific red from your design */
-  --primary-hover: #b91c1c;
-  --text-dark: #1f2937;
-  --text-gray: #4b5563;
-  --bg-light: #f9fafb;
-  --white: #ffffff;
-  --font-heading: 'Playfair Display', serif;
-  --font-body: 'Lato', sans-serif;
+  /* Ultra-Premium Palette */
+  --color-black: #050505;
+  /* Deep rich black */
+  --color-white: #FFFFFF;
+  --color-red-accent: #C3002F;
+  /* Premium deep red */
+  --color-gray-dark: #1A1A1A;
+  --color-gray-light: #F5F5F7;
+
+  /* Fonts */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  /* Transitions */
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 * {
@@ -19,47 +25,78 @@
 }
 
 body {
-  font-family: var(--font-body);
-  color: var(--text-dark);
-  background-color: var(--bg-light);
-  line-height: 1.6;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
+  font-family: var(--font-primary);
+  color: var(--color-black);
+  background-color: var(--color-white);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
   text-decoration: none;
   color: inherit;
-  transition: 0.3s;
+  transition: var(--transition-smooth);
 }
 
 ul {
   list-style: none;
 }
 
-/* Utility container class */
+/* Utility Classes */
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
+  /* Wider container for luxury feel */
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 5%;
 }
 
+.section-padding {
+  padding: 120px 0;
+}
+
+/* Premium Buttons */
 .btn {
   display: inline-block;
-  padding: 0.75rem 2rem;
+  padding: 16px 32px;
   border-radius: 50px;
-  font-weight: bold;
+  font-weight: 500;
   cursor: pointer;
-  border: none;
+  border: 1px solid transparent;
+  transition: var(--transition-smooth);
+  font-size: 16px;
+  letter-spacing: 0.5px;
 }
 
 .btn-primary {
-  background-color: var(--primary-color);
-  color: var(--white);
+  background-color: var(--color-red-accent);
+  color: var(--color-white);
 }
 
 .btn-primary:hover {
-  background-color: var(--primary-hover);
+  background-color: #a00026;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(195, 0, 47, 0.3);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid var(--color-white);
+  color: var(--color-white);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+.btn-black {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border: 1px solid var(--color-black);
+}
+
+.btn-black:hover {
+  background-color: transparent;
+  color: var(--color-black);
 }

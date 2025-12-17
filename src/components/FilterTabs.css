@@ -1,0 +1,33 @@
+.filter-tabs-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.filter-tab-btn {
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid #d62828;
+}
+
+.filter-tab-btn.active {
+  background-color: #d62828;
+  color: white;
+  border-color: #d62828;
+}
+
+.filter-tab-btn:not(.active) {
+  background-color: #f6f6f6;
+  color: #d62828;
+}
+
+.filter-tab-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}

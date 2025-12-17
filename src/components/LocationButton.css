@@ -1,0 +1,126 @@
+/* ============================
+   Location Floating Button CSS
+   ============================ */
+
+/* Container for Location button - fixed positioning for floating effect */
+.location-container {
+    position: fixed;
+    /* Fixed position for floating button */
+    bottom: 24px;
+    /* Distance from bottom */
+    left: 24px;
+    /* Distance from left */
+    display: flex;
+    /* Flexbox for alignment */
+    align-items: flex-end;
+    /* Align items to bottom */
+    gap: 12px;
+    /* Gap between button and popup */
+    z-index: 9999;
+    /* High z-index to stay on top */
+    pointer-events: auto;
+    /* Enable interactions */
+    transition: opacity 0.5s ease;
+    /* Smooth opacity transitions */
+    flex-direction: row-reverse;
+    /* Flip direction so popup is to the right of button if needed, or keep standard and adjust */
+}
+
+/* Since it's on the left, we might want the popup to the right of the button. 
+   Default flex row puts items Left -> Right. 
+   If we want Button (Left) -> Popup (Right), that's standard order if we put the button first in DOM.
+   Currently WhatsApp is Button (Right) <- Popup (Left)? Let's check WhatsApp DOM structure.
+   WhatsApp code:
+        <div className="whatsapp-container">
+            <div className="whatsapp-popup">...</div>
+            <a className="whatsapp-button">...</a>
+        </div>
+   CSS: justify-content defaults (start). 
+   So elements appear: Popup, then Button.
+   Since it is right: 24px, the flow is towards the left? No, flex just places them next to each other.
+   
+   For Left side: We want Button (Left) -> Popup (Right).
+   So in JSX we should order: <Button /> then <Popup />.
+*/
+
+/* Popup styling removed */
+
+/* Location button - circular floating button with glassmorphism */
+.location-button {
+    background-color: rgba(53, 44, 44, 0.7);
+    /* Matching WhatsApp base #352c2c with opacity */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    width: 60px;
+    height: 60px;
+    text-decoration: none;
+    padding: 12px;
+    /* Adjusted padding to match icon size */
+    z-index: 10000;
+}
+
+.location-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    /* Add depth to the pin */
+}
+
+/* Hover effect */
+.location-button:hover {
+    background-color: rgba(53, 44, 44, 0.9);
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Active effect */
+.location-button:active {
+    transform: scale(0.95);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .location-container {
+        bottom: 20px;
+        left: 20px;
+    }
+
+    .location-button {
+        width: 56px;
+        height: 56px;
+        padding: 10px;
+    }
+
+    .location-popup {
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .location-container {
+        bottom: 16px;
+        left: 16px;
+    }
+
+    .location-button {
+        width: 52px;
+        height: 52px;
+        padding: 8px;
+    }
+
+    .location-popup {
+        font-size: 12px;
+        max-width: 180px;
+    }
+}
