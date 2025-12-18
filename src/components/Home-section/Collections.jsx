@@ -7,7 +7,7 @@ import './Collections.css';
 // Importing existing images for collage
 import carpetImg from '../../assets/beige-carpet.jpg';
 import curtainImg from '../../assets/black-curtain.jpg';
-import grassImg from '../../assets/Green_Artificial_Grass.jpeg';
+import grassImg from '../../assets/green_artificial_grass.jpg';
 
 const collections = [
     {
