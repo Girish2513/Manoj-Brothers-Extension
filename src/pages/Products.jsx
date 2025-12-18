@@ -1,4 +1,3 @@
-// src/pages/Products.jsx
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import './Products.css';
@@ -44,28 +43,25 @@ import wallCarpetsImg from '../assets/wall-carpets.png';
 import pvcCoatedFabricsImg from '../assets/pvc-coated-fabrics.png';
 import allPurposeAdhesivesImg from '../assets/all-purpose-adhesives.png';
 import redExhibitionCarpetImg from '../assets/red-exhibition-carpet.png';
+import soffitPanelsImg from '../assets/soffit-panels.png';
+import rubberHollowMatImg from '../assets/rubber-hollow-mat.png';
 import ProductModal from '../components/ProductModal';
 
 const productsData = [
   { id: 1, category: 'flooring', title: 'Water-Resistant PVC Vinyl Flooring', desc: 'Ideal for modern homes and high-traffic commercial areas.', img: vinylFlooringImg },
   { id: 2, category: 'speciality', title: 'Premium Artificial Grass (40mm)', desc: 'Lush, low-maintenance green solutions for balconies and gardens.', img: artificialGrassImg },
   { id: 3, category: 'furnishing', title: 'Rich Velvet Upholstery Fabric', desc: 'Luxurious and durable fabric for sofas, chairs, and cushions.', img: velvetClothImg },
-  { id: 4, category: 'industrial', title: 'Rubber Hollow Doormats', desc: 'Durable rubber mats for industrial and safety applications.', img: rubberMatImg },
-  { id: 5, category: 'flooring', title: 'Red Exhibition Carpet', desc: 'High-quality, vibrant carpets perfect for events and stages.', img: redExhibitionCarpetImg },
-  { id: 6, category: 'speciality', title: 'PVC Membrane Film', desc: 'Durable and stylish films for modular kitchens and furniture.', img: pvcMembraneNewImg },
-  { id: 7, category: 'furnishing', title: 'Designer Wallpaper Rolls', desc: 'A wide variety of patterns and textures to elevate your walls.', img: wallpapersImg },
-
-  { id: 9, category: 'industrial', title: 'PVC Clear Sheeting', desc: 'High-quality PVC sheeting for industrial use.', img: pvcSheetingImg },
-  { id: 10, category: 'packaging', title: 'EPE Foams', desc: 'Protective EPE foam packaging solutions for various needs.', img: epeFoamsImg },
-
-  // New Products
-  // New Products
-  { id: 11, category: 'flooring', title: 'Fancy Carpet', desc: 'Elegant and luxurious carpets to enhance your interior decor.', img: fancyCarpetImg },
-  { id: 41, category: 'speciality', title: 'Self-adhesive Waterproofing Membrane', desc: 'High-quality waterproofing solution for roofs and foundations.', img: waterproofingMembraneImg },
-  { id: 40, category: 'flooring', title: 'Regular Carpet', desc: 'Durable and practical carpets suitable for everyday use.', img: regularCarpetImg },
+  { id: 4, category: 'flooring', title: 'Red Exhibition Carpet', desc: 'High-quality, vibrant carpets perfect for events and stages.', img: redExhibitionCarpetImg },
+  { id: 5, category: 'speciality', title: 'PVC Membrane Film', desc: 'Durable and stylish films for modular kitchens and furniture.', img: pvcMembraneNewImg },
+  { id: 6, category: 'furnishing', title: 'Designer Wallpaper Rolls', desc: 'A wide variety of patterns and textures to elevate your walls.', img: wallpapersImg },
+  { id: 7, category: 'exterior', title: 'Soffit Panels', desc: 'Durable and aesthetic panels for exterior roofing and siding.', img: soffitPanelsImg },
+  { id: 8, category: 'industrial', title: 'PVC Clear Sheeting', desc: 'High-quality PVC sheeting for industrial use.', img: pvcSheetingImg },
+  { id: 9, category: 'packaging', title: 'EPE Foams', desc: 'Protective EPE foam packaging solutions for various needs.', img: epeFoamsImg },
+  { id: 10, category: 'flooring', title: 'Fancy Carpet', desc: 'Elegant and luxurious carpets to enhance your interior decor.', img: fancyCarpetImg },
+  { id: 11, category: 'flooring', title: 'Regular Carpet', desc: 'Durable and practical carpets suitable for everyday use.', img: regularCarpetImg },
   { id: 12, category: 'flooring', title: 'PVC Stud Flooring', desc: 'Anti-slip stud flooring perfect for gyms and heavy-traffic areas.', img: pvcStudFlooringImg },
   { id: 13, category: 'flooring', title: 'PVC Anti Static Flooring', desc: 'Specialized flooring for server rooms and hospitals.', img: pvcAntiStaticImg },
-  { id: 14, category: 'speciality', title: 'Rubber Gym Tiles', desc: 'Heavy-duty interlocking rubber tiles for gym floors.', img: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070' },
+  { id: 14, category: 'flooring', title: 'Rubber Gym Tiles', desc: 'Heavy-duty interlocking rubber tiles for gym floors.', img: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070' },
   { id: 15, category: 'doormats', title: 'Cushion Doormat', desc: 'Soft and absorbent mats for home entrances.', img: cushionDoormatImg },
   { id: 16, category: 'doormats', title: 'Turf Doormats', desc: 'Artificial grass texture doormats for a natural look.', img: turfDoormatImg },
   { id: 17, category: 'doormats', title: 'Snake Doormats', desc: 'Open-grid design for effective dirt scraping and drainage.', img: snakeDoormatImg },
@@ -75,7 +71,7 @@ const productsData = [
   { id: 21, category: 'packaging', title: 'Air Bubble Packaging', desc: 'Protective wrap for safe shipping and storage.', img: airBubblePackagingImg },
   { id: 22, category: 'speciality', title: 'Vertical Garden Grass', desc: 'Realistic vertical grass panels for wall decor.', img: verticalGrassImg },
   { id: 23, category: 'speciality', title: 'Turf Sports Grass', desc: 'High-performance artificial turf for sports fields.', img: turfSportsGrassImg },
-  { id: 24, category: 'flooring', title: 'Speaker Felt', desc: 'Acoustic transparency fabric for speakers.', img: speakerFeltImg },
+  { id: 24, category: 'speciality', title: 'Speaker Felt', desc: 'Acoustic transparency fabric for speakers.', img: speakerFeltImg },
   { id: 25, category: 'industrial', title: 'Floor Protection Guards', desc: 'Pads and guards to protect floors from furniture scratches.', img: floorProtectionGuardImg },
   { id: 26, category: 'industrial', title: 'Self-Adhesive Velcro Tape', desc: 'Strong hook and loop fasteners for multiple uses.', img: selfAdhesiveVelcroImg },
   { id: 27, category: 'furnishing', title: 'Premium Upholstery Rexine', desc: 'Durable and stylish leatherette for furniture like sofas and chairs.', img: premiumRexineImg },
@@ -87,12 +83,12 @@ const productsData = [
   { id: 33, category: 'nets', title: 'Cricket Practice Net', desc: 'High-quality nets for sports practice and safety.', img: cricketNetImg },
   { id: 34, category: 'nets', title: 'Mosquito Protection Net', desc: 'Effective netting to keep interiors mosquito-free.', img: mosquitoNetImg },
   { id: 35, category: 'flooring', title: 'EVA School Foam Mats', desc: 'Colorful and safe interlocking foam mats for kids and schools.', img: evaFoamImg },
-  { id: 36, category: 'doormats', title: 'Rubber Hollow Doormats', desc: 'Durable rubber mats with drainage holes for entrances.', img: 'https://images.unsplash.com/photo-1616401784845-180882ba9ba8?q=80&w=2070' },
+  { id: 36, category: 'doormats', title: 'Rubber Hollow Doormats', desc: 'Durable rubber mats with drainage holes for entrances.', img: rubberHollowMatImg },
   { id: 37, category: 'industrial', title: 'PVC Strip Curtains', desc: 'Transparent industrial curtains for temperature and dust control.', img: pvcStripCurtainsImg },
   { id: 38, category: 'industrial', title: 'All Purpose Adhesives', desc: 'Strong bonding solutions for various materials.', img: allPurposeAdhesivesImg },
-
-  { id: 42, category: 'doormats', title: 'Rubber Doormat', desc: 'Classic rubber doormat for superior dirt removal.', img: rubberDoormatImg },
-  { id: 43, category: 'doormats', title: 'Coir Doormat', desc: 'Natural coir fiber doormat with decorative patterns.', img: coirDoormatImg },
+  { id: 39, category: 'speciality', title: 'Self-adhesive Waterproofing Membrane', desc: 'High-quality waterproofing solution for roofs and foundations.', img: waterproofingMembraneImg },
+  { id: 40, category: 'doormats', title: 'Rubber Doormat', desc: 'Classic rubber doormat for superior dirt removal.', img: rubberDoormatImg },
+  { id: 41, category: 'doormats', title: 'Coir Doormat', desc: 'Natural coir fiber doormat with decorative patterns.', img: coirDoormatImg },
 ];
 
 const Products = () => {
@@ -112,6 +108,7 @@ const Products = () => {
     { id: 'packaging', label: 'Packaging' },
     { id: 'doormats', label: 'Doormats' },
     { id: 'nets', label: 'Nets' },
+    { id: 'exterior', label: 'Exterior' },
   ];
 
   return (
