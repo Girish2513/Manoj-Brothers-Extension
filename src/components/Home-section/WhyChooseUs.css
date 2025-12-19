@@ -1,83 +1,192 @@
-.features-section {
-    background-color: var(--color-black);
-    color: var(--color-white);
+/* Section Background (Deep Black) */
+.why-choose-us {
+  background-color: #050505;
+  color: white;
+  padding: 80px 0;
+  overflow: hidden; 
+}
+
+/* Grid Layout */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  align-items: center; 
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-header-left {
+  flex: 1;
+  min-width: 300px;
+  
+  /* Animation Start State */
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* --- THE RED LINE (Both Top & Bottom) --- */
+.red-line {
+  width: 290px; /* Long and visible */
+  height: 6px;  /* Thick and structural */
+  background: linear-gradient(90deg, #d12c2c 0%, #b01a1a 100%);
+  border-radius: 4px;
+  
+  /* Adds spacing above AND below the lines */
+  margin: 25px 0; 
+}
+
+/* Title Styling */
+.title-large {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  /* Removed margin-bottom here because the bottom red-line handles spacing now */
+  margin: 0; 
+  color: #fff;
 }
 
 .features-grid {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 80px;
-    align-items: start;
+  flex: 2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  min-width: 300px;
 }
 
-.features-header {
-    margin-top: 20px;
+/* --- SCROLL REVEAL ANIMATION LOGIC --- */
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.features-title {
-    font-size: 3.5rem;
-    line-height: 1.1;
-    font-weight: 700;
-    margin-bottom: 24px;
-}
-
-.features-decorator {
-    width: 60px;
-    height: 4px;
-    background-color: var(--color-red-accent);
-    margin-top: 20px;
-}
-
-.features-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-}
-
+/* --- THE NEON BORDER CARD --- */
 .feature-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 32px;
-    border-radius: 12px;
-    transition: var(--transition-smooth);
+  position: relative;
+  background: transparent;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 3px; 
+  cursor: default;
+  
+  /* Hidden Initially */
+  opacity: 0; 
 }
 
-.feature-card:hover {
-    background: rgba(255, 255, 255, 0.06);
-    transform: translateY(-5px);
-    border-color: rgba(255, 255, 255, 0.2);
+/* Trigger Animation */
+.why-choose-us.visible .feature-card {
+  animation: slideUpFade 0.8s ease-out forwards;
 }
 
-.feature-icon {
-    color: var(--color-red-accent);
-    margin-bottom: 20px;
+/* --- INNER CARD CONTENT --- */
+.card-inner {
+  background: #111; 
+  border-radius: 10px;
+  padding: 30px;
+  height: 100%;
+  position: relative;
+  z-index: 2; 
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
-.feature-name {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 8px;
+/* --- THE SPINNING BEAM --- */
+.border-beam {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: 1;
+  
+  background: conic-gradient(
+    transparent, 
+    transparent, 
+    #d12c2c 
+  );
+  
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.feature-desc {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 0.95rem;
-    line-height: 1.5;
+/* Hover Effects */
+.feature-card:hover .border-beam {
+  opacity: 1;
+  animation: spin 3s linear infinite;
 }
 
-@media (max-width: 1024px) {
-    .features-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .features-title {
-        font-size: 2.5rem;
-    }
+.feature-card:hover .card-inner {
+  background: #161616;
 }
 
-@media (max-width: 640px) {
-    .features-list {
-        grid-template-columns: 1fr;
-    }
+/* Icon Styling */
+.icon-wrapper {
+  color: #d12c2c;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .icon-wrapper {
+  transform: scale(1.1) translateZ(0);
+}
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: white;
+  font-weight: 700;
+}
+
+.feature-card p {
+  color: #888;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* --- TITLE SCROLL REVEAL TRIGGER --- */
+.why-choose-us.visible .section-header-left {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .features-grid {
+    width: 100%;
+  }
+  
+  .section-header-left {
+    transform: translateY(30px);
+  }
+  
+  .why-choose-us.visible .section-header-left {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .features-grid {
+    grid-template-columns: 1fr; 
+  }
+  
+  .title-large {
+    font-size: 2.5rem;
+  }
 }

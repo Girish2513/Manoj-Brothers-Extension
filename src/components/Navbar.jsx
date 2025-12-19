@@ -7,8 +7,6 @@ import './Navbar.css';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
-  // 1. State for the Progress Bar
   const [scrollProgress, setScrollProgress] = useState(0);
 
   const toggleMenu = useCallback(() => setIsOpen(!isOpen), [isOpen]);
@@ -20,11 +18,9 @@ const Navbar = () => {
     const handleScroll = () => {
       if (requestRunning === null) {
         requestRunning = window.requestAnimationFrame(() => {
-          // A. Navbar Background Logic
           const isScrolled = window.scrollY > 50;
           setScrolled(prev => (prev !== isScrolled ? isScrolled : prev));
 
-          // B. Scroll Progress Bar Logic
           const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
           if (totalHeight > 0) {
             const progress = (window.scrollY / totalHeight) * 100;
@@ -36,31 +32,21 @@ const Navbar = () => {
       }
     };
 
-    // Add scroll listener
     window.addEventListener('scroll', handleScroll);
-
-    // Check initial position
     handleScroll();
 
-    // Cleanup
     return () => {
       window.removeEventListener('scroll', handleScroll);
       if (requestRunning !== null) {
         window.cancelAnimationFrame(requestRunning);
       }
     };
-  }, []); // Dependencies removed as we use functional updates or internal refs if needed, but here simple functional update for setScrolled works. Actually setScrollProgress uses window values directly. 
-
-  const scrollWithOffset = useCallback((el) => {
-    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
-    const yOffset = -80;
-    window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
   }, []);
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
 
-      {/* 2. THE RED SCROLL LINE (Added at the very top) */}
+      {/* 1. SCROLL PROGRESS BAR */}
       <div className="scroll-track">
         <div
           className="scroll-bar"
@@ -76,29 +62,37 @@ const Navbar = () => {
           <span className="logo-ext">Extension</span>
         </HashLink>
 
-        {/* Desktop Menu */}
+        {/* DESKTOP MENU */}
         <div className="nav-menu">
+          {/* Home stays as HashLink to scroll to top if on homepage */}
           <HashLink smooth to="/#home" className="nav-link home-active">HOME</HashLink>
+          
+          {/* THESE MUST BE STANDARD LINKS FOR SEPARATE PAGES */}
           <Link to="/products" className="nav-link">PRODUCTS</Link>
-          <HashLink smooth to="/#gallery" scroll={scrollWithOffset} className="nav-link">GALLERY</HashLink>
-          <HashLink smooth to="/#about" scroll={scrollWithOffset} className="nav-link">ABOUT</HashLink>
+          
+          {/* UPDATED: Changed from HashLink to Link */}
+          <Link to="/about" className="nav-link">ABOUT</Link>
+          
           <Link to="/faq" className="nav-link">FAQ</Link>
-          <Link to="/contact" className="nav-link">CONTACT</Link>
+          <Link to="/contact" className="nav-link">CONTACT</Link> 
         </div>
 
-        {/* Mobile Menu Icon */}
+        {/* MOBILE MENU ICON */}
         <div className="mobile-icon" onClick={toggleMenu}>
           {isOpen ? <X size={28} color="white" /> : <Menu size={28} color="white" />}
         </div>
       </div>
 
-      {/* Mobile Dropdown */}
+      {/* MOBILE DROPDOWN */}
       {isOpen && (
         <div className="mobile-menu">
           <HashLink smooth to="/#home" className="mobile-link home-active" onClick={toggleMenu}>HOME</HashLink>
+          
           <Link to="/products" className="mobile-link" onClick={toggleMenu}>PRODUCTS</Link>
-          <HashLink smooth to="/#gallery" scroll={scrollWithOffset} className="mobile-link" onClick={toggleMenu}>GALLERY</HashLink>
-          <HashLink smooth to="/#about" scroll={scrollWithOffset} className="mobile-link" onClick={toggleMenu}>ABOUT</HashLink>
+          
+          {/* UPDATED: Changed from HashLink to Link */}
+          <Link to="/about" className="mobile-link" onClick={toggleMenu}>ABOUT</Link>
+          
           <Link to="/faq" className="mobile-link" onClick={toggleMenu}>FAQ</Link>
           <Link to="/contact" className="mobile-link" onClick={toggleMenu}>CONTACT</Link>
         </div>

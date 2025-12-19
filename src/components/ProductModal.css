@@ -107,6 +107,16 @@
     margin-bottom: 2.5rem;
 }
 
+.modal-tagline {
+  font-size: 0.95rem;
+  color: #6b7280; /* neutral gray */
+  line-height: 1.6;
+  margin-top: -0.75rem;
+  margin-bottom: 2.5rem;
+  font-style: italic;
+}
+
+
 .modal-cta-btn {
     background: #DC2626;
     color: white;

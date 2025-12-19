@@ -47,7 +47,7 @@
 
 /* Info Card */
 .contact-info-card {
-    background: #DC2626;
+    background: #C3002F;
     color: white;
     border-radius: 20px;
     padding: 3rem;
@@ -120,7 +120,7 @@
 .form-input:focus,
 .form-textarea:focus {
     outline: none;
-    border-color: #DC2626;
+    border-color: #C3002F;
     box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
 }
 

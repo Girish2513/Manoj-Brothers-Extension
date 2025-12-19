@@ -3,7 +3,8 @@
   height: 100vh;
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  padding-top: 22vh; /* balanced – do NOT change */
   overflow: hidden;
   background-color: var(--color-black);
 }
@@ -11,10 +12,7 @@
 /* Cinematic Background */
 .hero-bg-wrapper {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   z-index: 0;
 }
 
@@ -23,26 +21,22 @@
   height: 100%;
   object-fit: cover;
   opacity: 0.6;
-  /* Dimmed for text readability */
   transform: scale(1.1);
   animation: zoomOut 20s infinite alternate;
-  /* Subtle parallax movement */
 }
 
 .hero-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom,
-      rgba(5, 5, 5, 0.3) 0%,
-      rgba(5, 5, 5, 0.8) 100%);
-  /* Cinematic gradient */
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(5, 5, 5, 0.3) 0%,
+    rgba(5, 5, 5, 0.85) 100%
+  );
   z-index: 1;
 }
 
-/* Content Styling */
+/* Content Wrapper */
 .hero-content {
   position: relative;
   z-index: 2;
@@ -50,59 +44,118 @@
   max-width: 1000px;
 }
 
+/* --- SCROLL REVEAL ANIMATION LOGIC --- */
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 1. Label */
 .hero-label {
   display: inline-block;
   font-size: 14px;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 24px;
+  margin-bottom: 18px;
   border-left: 2px solid var(--color-red-accent);
   padding-left: 16px;
-  animation: fadeUp 1s ease-out;
+  
+  /* Initial State: Hidden */
+  opacity: 0;
 }
 
+.hero-section.visible .hero-label {
+  animation: slideUpFade 0.8s ease-out forwards;
+}
+
+/* 2. Title */
 .hero-title {
   font-size: 4.5rem;
   font-weight: 700;
-  line-height: 1.1;
-  margin-bottom: 24px;
+  
+  /* tighter vertical rhythm */
+  line-height: 0.95;
+  
+  /* reduce title block height */
+  margin-bottom: 0;
+  
   letter-spacing: -1px;
-  animation: fadeUp 1s ease-out 0.2s backwards;
+  
+  /* Initial State: Hidden */
+  opacity: 0;
 }
 
-.text-gradient {
-  background: linear-gradient(90deg, #ffffff, #cccccc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.hero-section.visible .hero-title {
+  /* Delay 0.2s */
+  animation: slideUpFade 0.8s ease-out 0.2s forwards;
 }
 
+/* 3. Subtitle */
 .hero-subtitle {
   font-size: 1.25rem;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 48px;
+  
+  /* noticeable upward move */
+  margin-top: -18px;
+  
+  /* keep CTA close */
+  margin-bottom: 12px;
+  
   max-width: 600px;
   font-weight: 300;
-  animation: fadeUp 1s ease-out 0.4s backwards;
+  
+  /* Initial State: Hidden */
+  opacity: 0;
 }
 
+.hero-section.visible .hero-subtitle {
+  /* Delay 0.4s */
+  animation: slideUpFade 0.8s ease-out 0.4s forwards;
+}
+
+/* 4. CTA Buttons */
 .hero-cta-group {
   display: flex;
   gap: 20px;
   align-items: center;
-  animation: fadeUp 1s ease-out 0.6s backwards;
+  
+  /* visible shift upward */
+  margin-top: -14px;
+  
+  /* Initial State: Hidden */
+  opacity: 0;
 }
 
-/* Stats at bottom */
+.hero-section.visible .hero-cta-group {
+  /* Delay 0.6s */
+  animation: slideUpFade 0.8s ease-out 0.6s forwards;
+}
+
+/* 5. Stats */
 .hero-stats {
-  margin-top: 80px;
+  margin-top: 72px;
   display: flex;
   align-items: center;
   gap: 40px;
-  animation: fadeUp 1s ease-out 0.8s backwards;
+  
+  /* Initial State: Hidden */
+  opacity: 0;
 }
 
+.hero-section.visible .hero-stats {
+  /* Delay 0.8s */
+  animation: slideUpFade 0.8s ease-out 0.8s forwards;
+}
+
+/* Stat Items */
 .stat-item {
   display: flex;
   flex-direction: column;
@@ -127,31 +180,21 @@
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Animations */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 @keyframes zoomOut {
   from {
     transform: scale(1.1);
   }
-
   to {
-    transform: scale(1.0);
+    transform: scale(1);
   }
 }
 
 /* Responsive */
 @media (max-width: 768px) {
+  .hero-section {
+    padding-top: 20vh;
+  }
+
   .hero-title {
     font-size: 2.5rem;
   }
@@ -166,5 +209,11 @@
     width: 100%;
     text-align: center;
     justify-content: center;
+  }
+}
+
+@media (max-height: 700px) {
+  .hero-section {
+    padding-top: 16vh;
   }
 }

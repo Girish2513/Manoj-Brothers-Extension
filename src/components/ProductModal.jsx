@@ -29,10 +29,14 @@ const ProductModal = ({ product, onClose }) => {
                     <div className="modal-details">
                         <span className="modal-category">{product.category}</span>
                         <h2 className="modal-title">{product.title}</h2>
-                        <p className="modal-desc">{product.desc}</p>
-                        <p className="modal-desc" style={{ fontSize: '0.95rem', fontStyle: 'italic', marginTop: '-1rem' }}>
-                            Note: This is a sample description. In a real app, this would contain detailed specs like thickness, material composition, or roll dimensions.
+                        <p className="modal-desc">
+                            {product.desc}
+                            {product.line1 && ` ${product.line1}`}
+                            {product.line2 && ` ${product.line2}`}
                         </p>
+                        {/* <p className="modal-desc" style={{ fontSize: '0.95rem', fontStyle: 'italic', marginTop: '-1rem' }}>
+                            Note: This is a sample description. In a real app, this would contain detailed specs like thickness, material composition, or roll dimensions.
+                        </p> */}
 
                         <Link to="/contact" className="modal-cta-btn">
                             Enquire Now
