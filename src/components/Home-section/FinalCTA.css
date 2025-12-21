@@ -6,6 +6,16 @@
     color: var(--color-white);
     position: relative;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.final-cta .cta-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 /* Add a subtle texture or noise if possible, but gradient serves well for now */
@@ -58,7 +68,8 @@
 }
 
 .btn-black:hover {
-    background-color: #000;
+    background-color:white;
+    color: black;
     transform: translateY(-3px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
     letter-spacing: 3px;

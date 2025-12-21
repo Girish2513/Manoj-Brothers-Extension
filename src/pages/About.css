@@ -1,7 +1,87 @@
 /* src/pages/About.css */
 
-/* Page Header (Consistent Hero Style) */
-.page-header {
+/* --- Variables & Theme Overrides --- */
+:root {
+  --about-deep-red: #C00000;
+  --about-text-grey: #666666;
+  --about-bg-light: #F6F6F6;
+  --about-bg-white: #FFFFFF;
+  --about-text-black: #0D0D0D;
+  --font-heading: 'Poppins', 'Inter', sans-serif;
+  --font-body: 'Inter', 'Poppins', sans-serif;
+}
+
+.about-page {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: var(--about-bg-white);
+  color: var(--about-text-black);
+}
+
+/* --- Typography Utilities --- */
+.about-page h1,
+.about-page h2,
+.about-page h3 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.about-page p {
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--about-text-grey);
+  line-height: 1.6;
+}
+
+/* --- Animations --- */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: 100%;
+  }
+}
+
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.2s;
+}
+
+.delay-2 {
+  animation-delay: 0.4s;
+}
+
+/* --- 1. Hero Section --- */
+.about-hero {
   background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
   color: white;
   padding: 8rem 2rem 6rem;
@@ -10,117 +90,429 @@
   overflow: hidden;
 }
 
-.page-header h1 {
+.about-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-hero h1 {
   font-family: var(--font-heading, serif);
   font-size: 3.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   background: linear-gradient(to right, #ffffff, #e5e5e5);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
+  line-height: 1.2;
 }
 
-.page-header p {
+.about-hero p {
   font-size: 1.25rem;
   color: #9ca3af;
-  max-width: 600px;
+  max-width: 1000px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* --- 2. Promise Section --- */
+.about-promise {
+  padding: 6rem 0;
+  background-color: var(--about-bg-white);
+  text-align: center;
+}
+
+.promise-content {
+  max-width: 800px;
   margin: 0 auto;
 }
 
-/* Mission Section */
-.mission-flex {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  align-items: center;
+.about-promise h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  color: var(--about-text-black);
+}
+
+.about-promise p {
+  font-size: 1.25rem;
+  color: var(--about-text-grey);
+}
+
+/* --- 3. Timeline Section --- */
+.about-timeline {
+  padding: 6rem 0;
+  background-color: #050505;
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+/* Background texture/glow effect */
+.about-timeline::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(195, 0, 47, 0.1) 0%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.about-timeline h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+/* Vertical Line */
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  top: 0;
+}
+
+.timeline-line::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--about-deep-red);
+  transform-origin: top;
+  animation: slideDown 2s ease-out forwards;
+}
+
+/* Timeline Items */
+.timeline-item {
+  width: 50%;
+  padding: 2rem;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+  padding-right: 3rem;
+}
+
+.timeline-item.right {
+  left: 50%;
+  text-align: left;
+  padding-left: 3rem;
+}
+
+/* Glassmorphism Card for Content */
+.timeline-content {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+  display: inline-block;
+  width: 100%;
+}
+
+.timeline-content:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+}
+
+/* Dot */
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  top: 2.5rem;
+  width: 16px;
+  height: 16px;
+  background-color: #050505;
+  border: 4px solid var(--about-deep-red);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.timeline-item.left::after {
+  right: -8px;
+}
+
+.timeline-item.right::after {
+  left: -8px;
+}
+
+.timeline-content .year {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--about-deep-red);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.timeline-content p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Mobile Timeline */
+@media (max-width: 768px) {
+  .timeline-line {
+    left: 20px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    left: 0;
+    padding-left: 50px;
+    padding-right: 0;
+    text-align: left;
+  }
+
+  .timeline-item.left {
+    text-align: left;
+    padding-right: 0;
+  }
+
+  .timeline-item.left::after,
+  .timeline-item.right::after {
+    left: 12px;
+  }
+}
+
+/* --- 4. Pillars Section --- */
+.about-pillars {
+  padding: 6rem 0;
+  background-color: var(--about-bg-light);
+  color: var(--about-text-black);
+}
+
+.about-pillars h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+  color: var(--about-text-black);
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
 }
 
 @media (min-width: 768px) {
-  .mission-flex {
+  .pillars-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.pillar-card {
+  background: var(--about-bg-white);
+  padding: 3rem 2rem;
+  border-radius: 4px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.pillar-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.05);
+  background: var(--about-bg-white);
+}
+
+.pillar-icon {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: rgba(192, 0, 0, 0.2);
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.pillar-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--about-text-black);
+}
+
+.pillar-card p {
+  color: var(--about-text-grey);
+}
+
+/* --- 5. Trust Strip --- */
+.about-trust {
+  padding: 6rem 0;
+  background-color: #050505;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  border: none;
+}
+
+.about-trust::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(195, 0, 47, 0.1) 0%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.about-trust h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.trust-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .trust-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+  }
+}
+
+.trust-list li {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: white;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem 1.5rem;
+  border-radius: 50px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.trust-list li:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.check-icon {
+  color: var(--about-deep-red);
+  font-weight: bold;
+  margin-right: 0.8rem;
+}
+
+/* --- 6. CTA Section --- */
+.cta-section {
+  padding: 6rem 0;
+  background-color: var(--about-bg-white);
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-section p {
+  font-size: 1.25rem;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 500px) {
+  .cta-buttons {
     flex-direction: row;
   }
 }
 
-.mission-img {
-  width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-  height: 400px;
-  object-fit: cover;
+.btn {
+  padding: 1rem 2rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
 }
 
-/* Timeline Styles */
-.timeline-container {
-  max-width: 700px;
-  margin: 0 auto;
-  position: relative;
-  padding-left: 2rem;
+.btn-primary {
+  background-color: var(--about-deep-red);
+  color: white;
+  border: 2px solid var(--about-deep-red);
 }
 
-/* The vertical red line */
-.timeline-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 2px;
-  background-color: #fecaca;
-  /* Light red */
+.btn-primary:hover {
+  background-color: #a00000;
+  border-color: #a00000;
+  transform: translateY(-2px);
 }
 
-.timeline-item {
-  position: relative;
-  margin-bottom: 3rem;
-  padding-left: 2rem;
+.btn-outline {
+  background-color: transparent;
+  color: var(--about-text-black);
+  border: 2px solid var(--about-text-black);
 }
 
-.timeline-item:last-child {
-  margin-bottom: 0;
-}
-
-/* The dot on the timeline */
-.timeline-dot {
-  position: absolute;
-  left: -9px;
-  /* Adjusts dot to sit on the line */
-  top: 5px;
-  width: 16px;
-  height: 16px;
-  background-color: white;
-  border: 4px solid var(--primary-color);
-  border-radius: 50%;
-  z-index: 10;
-}
-
-.timeline-year {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--primary-color);
-  margin-bottom: 0.5rem;
-  font-family: var(--font-heading);
-}
-
-/* Pillars Section */
-.pillars-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 3rem;
-  text-align: center;
-}
-
-.pillar-icon-circle {
-  background-color: #fee2e2;
-  /* Very light red */
-  color: var(--primary-color);
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.5rem auto;
-  font-size: 1.5rem;
-  font-weight: bold;
+.btn-outline:hover {
+  background-color: var(--about-text-black);
+  color: white;
+  transform: translateY(-2px);
 }

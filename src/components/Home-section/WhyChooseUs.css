@@ -3,15 +3,15 @@
   background-color: #050505;
   color: white;
   padding: 80px 0;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 /* Grid Layout */
 .container {
   display: flex;
   flex-wrap: wrap;
-  gap: 60px;
-  align-items: center; 
+  gap: 30px;
+  align-items: center;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
@@ -20,7 +20,7 @@
 .section-header-left {
   flex: 1;
   min-width: 300px;
-  
+
   /* Animation Start State */
   opacity: 0;
   transform: translateX(-40px);
@@ -29,13 +29,15 @@
 
 /* --- THE RED LINE (Both Top & Bottom) --- */
 .red-line {
-  width: 290px; /* Long and visible */
-  height: 6px;  /* Thick and structural */
+  width: 290px;
+  /* Long and visible */
+  height: 6px;
+  /* Thick and structural */
   background: linear-gradient(90deg, #d12c2c 0%, #b01a1a 100%);
   border-radius: 4px;
-  
+
   /* Adds spacing above AND below the lines */
-  margin: 25px 0; 
+  margin: 25px 0;
 }
 
 /* Title Styling */
@@ -44,7 +46,7 @@
   font-weight: 800;
   line-height: 1.1;
   /* Removed margin-bottom here because the bottom red-line handles spacing now */
-  margin: 0; 
+  margin: 0;
   color: #fff;
 }
 
@@ -62,6 +64,7 @@
     opacity: 0;
     transform: translateY(60px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -74,11 +77,11 @@
   background: transparent;
   border-radius: 12px;
   overflow: hidden;
-  padding: 3px; 
+  padding: 3px;
   cursor: default;
-  
+
   /* Hidden Initially */
-  opacity: 0; 
+  opacity: 0;
 }
 
 /* Trigger Animation */
@@ -88,12 +91,12 @@
 
 /* --- INNER CARD CONTENT --- */
 .card-inner {
-  background: #111; 
+  background: #111;
   border-radius: 10px;
   padding: 30px;
   height: 100%;
   position: relative;
-  z-index: 2; 
+  z-index: 2;
   transition: transform 0.3s ease, background 0.3s ease;
 }
 
@@ -105,13 +108,11 @@
   width: 200%;
   height: 200%;
   z-index: 1;
-  
-  background: conic-gradient(
-    transparent, 
-    transparent, 
-    #d12c2c 
-  );
-  
+
+  background: conic-gradient(transparent,
+      transparent,
+      #d12c2c);
+
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -151,8 +152,13 @@
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* --- TITLE SCROLL REVEAL TRIGGER --- */
@@ -167,15 +173,15 @@
     flex-direction: column;
     align-items: flex-start;
   }
-  
+
   .features-grid {
     width: 100%;
   }
-  
+
   .section-header-left {
     transform: translateY(30px);
   }
-  
+
   .why-choose-us.visible .section-header-left {
     transform: translateY(0);
   }
@@ -183,9 +189,9 @@
 
 @media (max-width: 600px) {
   .features-grid {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
   }
-  
+
   .title-large {
     font-size: 2.5rem;
   }

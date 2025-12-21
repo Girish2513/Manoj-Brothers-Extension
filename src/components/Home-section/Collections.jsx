@@ -37,7 +37,7 @@ const Collections = () => {
     return (
         <section className="collections-section section-padding">
             <div className="container">
-                <div className="section-header">
+                <div className="collections-header">
                     <span className="section-tag">Explore</span>
                     <h2 className="section-title">Our Collections</h2>
                 </div>

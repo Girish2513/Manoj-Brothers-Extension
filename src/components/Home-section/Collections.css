@@ -2,6 +2,35 @@
     background-color: var(--color-white);
 }
 
+.collections-section .collections-header {
+    text-align: center;
+    margin-bottom: 20px;
+    opacity: 1;
+    /* Force visible */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.collections-section .section-tag {
+    font-size: 0.85rem;
+    color: #d12c2c;
+    /* Brand Red */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.collections-section .section-title {
+    font-size: 3rem;
+    color: #000;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
 .collections-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;

@@ -2,15 +2,20 @@
 
 .best-sellers-section {
   background-color: var(--color-white);
-  padding: 80px 0;
+  /* padding: 80px 0; */
   overflow: hidden;
 }
 
 /* --- SECTION HEADER --- */
 .section-header {
   text-align: center;
-  margin-bottom: 60px;
-  opacity: 0; /* Hidden for animation */
+  margin-bottom: 30px;
+  opacity: 0;
+  /* Hidden for animation */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .best-sellers-section.visible .section-header {
@@ -19,7 +24,8 @@
 
 .section-tag {
   font-size: 0.85rem;
-  color: #d12c2c; /* Brand Red */
+  color: #d12c2c;
+  /* Brand Red */
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 600;
@@ -37,12 +43,12 @@
 /* --- GRID LAYOUT (FIXED FOR 3 COLUMNS) --- */
 .products-grid {
   display: grid;
-  
+
   /* ⚡ FORCE 3 COLUMNS HORIZONTALLY */
-  grid-template-columns: repeat(3, 1fr); 
-  
+  grid-template-columns: repeat(3, 1fr);
+
   gap: 40px;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
   width: 100%;
 }
 
@@ -54,11 +60,11 @@
   position: relative;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
   border: 1px solid rgba(0, 0, 0, 0.03);
-  
+
   /* Animation Start State */
   opacity: 0;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
+
   /* Spotlight Variables */
   --mouse-x: 50%;
   --mouse-y: 50%;
@@ -77,7 +83,8 @@
 /* --- IMAGE AREA --- */
 .product-image-wrapper {
   position: relative;
-  height: 400px; /* Tall image area */
+  height: 400px;
+  /* Tall image area */
   overflow: hidden;
   background-color: #f3f4f6;
 }
@@ -114,14 +121,14 @@
 /* Hover Overlay */
 .product-overlay {
   position: absolute;
-  top: 0; 
+  top: 0;
   left: 0;
-  width: 100%; 
+  width: 100%;
   height: 100%;
   display: flex;
-  align-items: center; 
+  align-items: center;
   justify-content: center;
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.2);
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 4;
@@ -190,11 +197,9 @@
   pointer-events: none;
   z-index: 2;
   opacity: 0;
-  background: radial-gradient(
-    600px circle at var(--mouse-x) var(--mouse-y),
-    rgba(255, 255, 255, 0.4),
-    transparent 40%
-  );
+  background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
+      rgba(255, 255, 255, 0.4),
+      transparent 40%);
   transition: opacity 0.3s ease;
   mix-blend-mode: overlay;
 }
@@ -205,11 +210,15 @@
 
 /* --- VIEW ALL LINK (CENTERED) --- */
 .view-all-wrapper {
-  display: flex;            /* Enables Flexbox */
-  justify-content: center;  /* Forces horizontal centering */
-  align-items: center;      /* Vertically aligns text and icon */
-  width: 100%;              /* Ensures it spans full width */
-  margin-top: 20px;
+  display: flex;
+  /* Enables Flexbox */
+  justify-content: center;
+  /* Forces horizontal centering */
+  align-items: center;
+  /* Vertically aligns text and icon */
+  width: 100%;
+  /* Ensures it spans full width */
+  margin-top: 0px;
   opacity: 0;
 }
 
@@ -240,6 +249,7 @@
     opacity: 0;
     transform: translateY(60px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -264,8 +274,9 @@
   .section-title {
     font-size: 2.2rem;
   }
-  
+
   .product-image-wrapper {
-    height: 300px; /* Smaller image on phone */
+    height: 300px;
+    /* Smaller image on phone */
   }
-}   
+}
