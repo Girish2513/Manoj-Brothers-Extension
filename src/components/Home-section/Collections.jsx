@@ -6,7 +6,7 @@ import './Collections.css';
 
 // Importing existing images for collage
 import carpetImg from '../../assets/beige-carpet.jpg';
-import curtainImg from '../../assets/black-curtain.jpg';
+import flooringImg from '../../assets/Luxury_vinyl_plank.jpeg';
 import grassImg from '../../assets/green_artificial_grass.jpg';
 
 const collections = [
@@ -26,9 +26,9 @@ const collections = [
     },
     {
         id: 3,
-        title: 'Furnishing',
-        subtitle: 'Luxury Curtains',
-        image: curtainImg,
+        title: 'Flooring',
+        subtitle: 'Luxury Vinyl Planks',
+        image: flooringImg,
         size: 'tall'
     }
 ];

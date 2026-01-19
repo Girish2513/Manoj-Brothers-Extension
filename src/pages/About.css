@@ -110,6 +110,7 @@
   -webkit-text-fill-color: transparent;
   color: transparent;
   line-height: 1.2;
+  text-align: center;
 }
 
 .about-hero p {
@@ -136,6 +137,7 @@
   font-size: 2.2rem;
   margin-bottom: 1.5rem;
   color: var(--about-text-black);
+  text-align: center;
 }
 
 .about-promise p {
@@ -168,6 +170,8 @@
 
 .about-timeline h2 {
   text-align: center;
+  width: 100%;
+  display: block;
   font-size: 2.5rem;
   margin-bottom: 4rem;
   color: white;
@@ -317,6 +321,8 @@
 
 .about-pillars h2 {
   text-align: center;
+  width: 100%;
+  display: block;
   font-size: 2.5rem;
   margin-bottom: 4rem;
   color: var(--about-text-black);
@@ -394,6 +400,8 @@
 
 .about-trust h2 {
   text-align: center;
+  width: 100%;
+  display: block;
   font-size: 2rem;
   margin-bottom: 3rem;
   color: white;
@@ -414,10 +422,10 @@
 
 @media (min-width: 768px) {
   .trust-list {
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
     justify-content: center;
-    gap: 3rem;
   }
 }
 
@@ -458,6 +466,9 @@
 .cta-section h2 {
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
+  text-align: center;
+  width: 100%;
+  display: block;
 }
 
 .cta-section p {

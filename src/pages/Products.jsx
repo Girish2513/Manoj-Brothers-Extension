@@ -105,26 +105,26 @@ const ProductCard = ({ product, style, onOpenModal }) => {
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-    
+
     card.style.setProperty('--mouse-x', `${x}px`);
     card.style.setProperty('--mouse-y', `${y}px`);
   };
 
   return (
-    <div 
-      className="product-card" 
-      ref={cardRef} 
+    <div
+      className="product-card"
+      ref={cardRef}
       onMouseMove={handleMouseMove}
       style={style}
       onClick={() => onOpenModal(product)}
     >
       {/* Spotlight Overlay */}
       <div className="spotlight-overlay"></div>
-      
+
       {/* Image Section */}
       <div className="product-image-wrapper">
         <img src={product.img} alt={product.title} className="product-image" loading="lazy" />
-        
+
         {/* Hover Overlay with Button */}
         <div className="product-overlay">
           <button className="view-btn">
@@ -138,7 +138,7 @@ const ProductCard = ({ product, style, onOpenModal }) => {
         <span className="product-category">{product.category}</span>
         <h3 className="product-name">{product.title}</h3>
         <p className="product-desc-short">{product.desc}</p>
-        
+
         <div className="card-footer-visual">
           <span className="learn-more-link">Learn More &rarr;</span>
         </div>
@@ -184,7 +184,28 @@ const Products = () => {
       <section className="products-hero">
         <div className="hero-content">
           <h1 className="hero-title">Our Curated Collection</h1>
-          <p className="hero-subtitle">Discover premium materials engineered for excellence. From industrial strength to residential luxury.</p>
+          <p className="hero-subtitle">
+            Explore our extensive range of high-quality flooring, furnishing, and industrial materials.
+            From luxury vinyl planks to durable artificial grass, we provide premium solutions
+            for homes, offices, and commercial spaces at unmatched wholesale prices.
+          </p>
+
+          <div className="hero-stats">
+            <div className="stat-item">
+              <span className="stat-value">500+</span>
+              <span className="stat-label">Products</span>
+            </div>
+            <div className="stat-separator"></div>
+            <div className="stat-item">
+              <span className="stat-value">Wholesale</span>
+              <span className="stat-label">Pricing</span>
+            </div>
+            <div className="stat-separator"></div>
+            <div className="stat-item">
+              <span className="stat-value">Premium</span>
+              <span className="stat-label">Quality</span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -207,9 +228,9 @@ const Products = () => {
       <section className="products-grid-section">
         <div className={`products-grid ${isVisible ? 'visible' : ''}`}>
           {filteredProducts.map((product, index) => (
-            <ProductCard 
-              key={product.id} 
-              product={product} 
+            <ProductCard
+              key={product.id}
+              product={product}
               onOpenModal={setSelectedProduct}
               // Simple staggered animation logic
               style={{ animationDelay: `${index * 50}ms` }}

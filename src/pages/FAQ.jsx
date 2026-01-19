@@ -21,10 +21,6 @@ const FAQItem = ({ question, answer }) => {
 const FAQ = () => {
     const faqs = [
         {
-            q: "Do you offer installation services?",
-            a: "Yes, we provide professional installation for all our products, including PVC flooring, artificial grass, and wallpapers, ensuring a perfect finish."
-        },
-        {
             q: "Can I get a custom size for carpets or mats?",
             a: "Absolutely! We specialize in custom-cut solutions. Visit our showroom or contact us with your dimensions for a tailored quote."
         },

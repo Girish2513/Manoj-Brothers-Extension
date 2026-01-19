@@ -11,10 +11,10 @@ const HeroSection = () => {
   useEffect(() => {
     // 1. Wait for the Curtain Animation to finish (approx 2200ms - 2500ms)
     // You can adjust this number to match your exact curtain duration
-    const curtainDelay = 2200; 
+    const curtainDelay = 2200;
 
     const timer = setTimeout(() => {
-      
+
       const observer = new IntersectionObserver(
         (entries) => {
           if (entries[0].isIntersecting) {
@@ -28,15 +28,15 @@ const HeroSection = () => {
       if (sectionRef.current) {
         observer.observe(sectionRef.current);
       }
-      
+
     }, curtainDelay);
 
     return () => clearTimeout(timer); // Cleanup if user leaves page quickly
   }, []);
 
   return (
-    <section 
-      className={`hero-section ${isVisible ? 'visible' : ''}`} 
+    <section
+      className={`hero-section ${isVisible ? 'visible' : ''}`}
       ref={sectionRef}
     >
       <div className="hero-bg-wrapper">
@@ -65,7 +65,7 @@ const HeroSection = () => {
           <Link to="/products" className="btn btn-primary">
             Explore Collection
           </Link>
-          <Link to="/contact" className="btn btn-outline">
+          <Link to="/contact" className="btn btn-white">
             Visit Showroom <ArrowRight size={18} style={{ marginLeft: '8px' }} />
           </Link>
         </div>

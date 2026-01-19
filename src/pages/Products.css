@@ -4,16 +4,17 @@
 .products-page {
   font-family: var(--font-body, sans-serif);
   color: var(--text-dark, #333);
-  background-color: #f9fafb; /* Light grey background */
+  background-color: #f9fafb;
+  /* Light grey background */
   min-height: 100vh;
 }
 
 /* --- HERO SECTION --- */
 .products-hero {
   position: relative;
-  background-color: #050505; /* Deep black to match Home */
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
   color: white;
-  padding: 8rem 2rem 6rem;
+  padding: 5rem 6rem 2rem;
   text-align: center;
   overflow: hidden;
   margin-bottom: 3rem;
@@ -26,18 +27,97 @@
   margin: 0 auto;
 }
 
+/* --- ANIMATIONS --- */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .hero-title {
   font-family: var(--font-heading, serif);
   font-size: 3.5rem;
   margin-bottom: 1.5rem;
-  color: #fff;
+  color: #ffffff;
+  line-height: 1.2;
+  opacity: 0;
+  animation: fadeUp 0.8s ease-out forwards;
 }
 
 .hero-subtitle {
   font-size: 1.25rem;
-  color: #9ca3af;
-  margin-bottom: 0;
+  color: #d1d5db;
+  /* Lighter grey for better contrast on dark bg */
+  margin: 0 auto 2.5rem auto;
+  /* Center horizontally */
+  max-width: 800px;
+  /* Limit width for better readability */
   line-height: 1.6;
+  opacity: 0;
+  animation: fadeUp 0.8s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  animation: fadeUp 0.8s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 140px;
+  /* Ensure equal width for alignment */
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.stat-separator {
+  width: 1px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 600px) {
+  .hero-stats {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .stat-separator {
+    display: none;
+  }
+
+  .stat-item {
+    width: 45%;
+  }
 }
 
 /* --- FILTER SECTION --- */
@@ -100,6 +180,7 @@
     opacity: 0;
     transform: translateY(40px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -126,7 +207,7 @@
   border: 1px solid rgba(0, 0, 0, 0.03);
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
+
   /* Spotlight Variables */
   --mouse-x: 50%;
   --mouse-y: 50%;
@@ -165,11 +246,9 @@
   pointer-events: none;
   z-index: 2;
   opacity: 0;
-  background: radial-gradient(
-    600px circle at var(--mouse-x) var(--mouse-y),
-    rgba(255, 255, 255, 0.3),
-    transparent 40%
-  );
+  background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
+      rgba(255, 255, 255, 0.3),
+      transparent 40%);
   transition: opacity 0.3s;
   mix-blend-mode: overlay;
 }
@@ -186,7 +265,8 @@
   z-index: 3;
   display: flex;
   flex-direction: column;
-  height: 100%; /* Fill remaining height */
+  height: 100%;
+  /* Fill remaining height */
 }
 
 .product-category {
@@ -213,7 +293,8 @@
   line-height: 1.5;
   margin-bottom: 1.5rem;
   display: -webkit-box;
-  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-line-clamp: 2;
+  /* Limit to 2 lines */
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -222,7 +303,7 @@
 .product-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -256,7 +337,8 @@
 
 /* Visual footer link */
 .card-footer-visual {
-  margin-top: auto; /* Pushes to bottom */
+  margin-top: auto;
+  /* Pushes to bottom */
   border-top: 1px solid #f3f4f6;
   padding-top: 1rem;
 }
@@ -281,7 +363,7 @@
   .hero-title {
     font-size: 2.5rem;
   }
-  
+
   .products-grid {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1.5rem;
@@ -293,7 +375,7 @@
     justify-content: flex-start;
     border-radius: 15px;
   }
-  
+
   .filter-btn {
     white-space: nowrap;
   }

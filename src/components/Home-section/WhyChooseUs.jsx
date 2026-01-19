@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Shield, Clock, Star, Truck } from 'lucide-react';
+import { Shield, Star, Truck, Layers } from 'lucide-react';
 import './WhyChooseUs.css';
 
 const features = [
@@ -17,9 +17,9 @@ const features = [
   },
   {
     id: 3,
-    icon: <Clock size={32} />,
-    title: "Quick Installation",
-    desc: "Expert team for swift & perfect fitting."
+    icon: <Layers size={32} />,
+    title: "Wide Selection",
+    desc: "Extensive collection of modern designs."
   },
   {
     id: 4,
@@ -51,10 +51,10 @@ const WhyChooseUs = () => {
       (entries) => {
         if (entries[0].isIntersecting) {
           setIsVisible(true);
-          observer.disconnect(); 
+          observer.disconnect();
         }
       },
-      { threshold: 0.4 } 
+      { threshold: 0.4 }
     );
 
     if (sectionRef.current) {
@@ -67,15 +67,15 @@ const WhyChooseUs = () => {
   }, []);
 
   return (
-    <section 
-      className={`why-choose-us section-padding ${isVisible ? 'visible' : ''}`} 
+    <section
+      className={`why-choose-us section-padding ${isVisible ? 'visible' : ''}`}
       ref={sectionRef}
     >
       <div className="container">
         <div className="section-header-left">
           {/* RED LINE TOP */}
           <div className="red-line"></div>
-          
+
           <h2 className="title-large">
             Why <br /> Professionals <br /> Choose Us.
           </h2>
@@ -86,12 +86,12 @@ const WhyChooseUs = () => {
 
         <div className="features-grid">
           {features.map((feature, index) => (
-            <FeatureCard 
+            <FeatureCard
               key={feature.id}
               icon={feature.icon}
               title={feature.title}
               desc={feature.desc}
-              delay={`${index * 100}ms`} 
+              delay={`${index * 100}ms`}
             />
           ))}
         </div>

@@ -85,10 +85,10 @@
     transform: scale(1.05);
 }
 
-.collection-card:hover .collection-overlay {
+/* .collection-card:hover .collection-overlay {
     background: rgba(195, 0, 47, 0.85);
-    /* Red Overlay on Hover */
-}
+    Red Overlay on Hover
+} */
 
 .collection-content {
     color: var(--color-white);
