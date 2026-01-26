@@ -110,26 +110,6 @@
     .location-button {
         width: 52px;
         height: 52px;
-    }
-}
-        padding: 10px;
-    }
-
-    .location-popup {
-        font-size: 13px;
-        padding: 8px 12px;
-    }
-}
-
-@media (max-width: 480px) {
-    .location-container {
-        bottom: 16px;
-        left: 16px;
-    }
-
-    .location-button {
-        width: 52px;
-        height: 52px;
         padding: 8px;
     }
 
