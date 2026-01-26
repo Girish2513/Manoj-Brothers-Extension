@@ -258,10 +258,49 @@
 
 /* --- RESPONSIVE ADJUSTMENTS --- */
 
+/* Large Laptops */
+@media (max-width: 1200px) {
+  .products-grid {
+    gap: 30px;
+  }
+
+  .product-image-wrapper {
+    height: 350px;
+  }
+}
+
 /* Tablet: 2 Columns */
 @media (max-width: 1024px) {
   .products-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+  }
+
+  .product-image-wrapper {
+    height: 320px;
+  }
+
+  .product-name {
+    font-size: 1.3rem;
+  }
+}
+
+/* Small Tablets */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .products-grid {
+    gap: 20px;
+  }
+
+  .product-info {
+    padding: 20px 24px;
   }
 }
 
@@ -272,11 +311,37 @@
   }
 
   .section-title {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   .product-image-wrapper {
     height: 300px;
-    /* Smaller image on phone */
+  }
+
+  .product-info {
+    padding: 18px 20px;
+  }
+
+  .product-name {
+    font-size: 1.25rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .section-tag {
+    font-size: 0.75rem;
+  }
+
+  .product-image-wrapper {
+    height: 250px;
+  }
+
+  .link-hover {
+    font-size: 1rem;
   }
 }

@@ -65,7 +65,7 @@ const ProductCard = ({ product, style }) => {
 
       <div className="product-image-wrapper">
         <span className="product-badge">{product.badge}</span>
-        <img src={product.image} alt={product.name} className="product-image" loading="lazy" />
+        <img src={product.image} alt={product.name} className="product-image" loading="lazy" decoding="async" />
         
         <div className="product-overlay">
           <Link to="/products" className="view-btn">

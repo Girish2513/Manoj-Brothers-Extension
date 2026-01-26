@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="MB Extension">
+  <rect width="64" height="64" rx="12" fill="#0b0b0b"/>
+  <rect x="6" y="6" width="52" height="52" rx="10" fill="#111827" stroke="#b91c1c" stroke-width="3"/>
+  <text x="14" y="38" fill="#ffffff" font-family="'Inter', 'Segoe UI', Arial, sans-serif" font-size="22" font-weight="800">MB</text>
+</svg>

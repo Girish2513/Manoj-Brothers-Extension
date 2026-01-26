@@ -31,3 +31,34 @@
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .filter-tabs-container {
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+
+  .filter-tab-btn {
+    padding: 9px 20px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .filter-tabs-container {
+    gap: 10px;
+    margin-bottom: 32px;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+
+  .filter-tab-btn {
+    padding: 8px 18px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+}

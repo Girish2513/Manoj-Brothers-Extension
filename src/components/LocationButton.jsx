@@ -22,6 +22,8 @@ const LocationButton = () => {
                 <img
                     src={locationIcon}
                     alt="Store Location"
+                    loading="lazy"
+                    decoding="async"
                 />
             </a>
         </div>

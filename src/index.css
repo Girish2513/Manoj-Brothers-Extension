@@ -6,7 +6,7 @@
   --color-black: #050505;
   /* Deep rich black */
   --color-white: #FFFFFF;
-  --color-red-accent: #C3002F;
+  --color-red-accent: #b91c1c;
   /* Premium deep red */
   --color-gray-dark: #1A1A1A;
   --color-gray-light: #F5F5F7;
@@ -55,6 +55,34 @@ ul {
   padding: 80px 0;
 }
 
+/* Responsive Container Adjustments */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 4%;
+  }
+  .section-padding {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 5%;
+  }
+  .section-padding {
+    padding: 50px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 6%;
+  }
+  .section-padding {
+    padding: 40px 0;
+  }
+}
+
 /* Premium Buttons */
 .btn {
   display: inline-block;
@@ -74,7 +102,7 @@ ul {
 }
 
 .btn-primary:hover {
-  background-color: #a00026;
+  background-color: #8f1717;
   transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(195, 0, 47, 0.3);
 }
@@ -90,6 +118,29 @@ ul {
   color: var(--color-black);
 }
 
+:focus-visible {
+  outline: 3px solid #fbbf24;
+  outline-offset: 2px;
+}
+
+.error-fallback {
+  min-height: 50vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  gap: 12px;
+  padding: 40px 20px;
+}
+
+.page-loader {
+  min-height: 40vh;
+  display: grid;
+  place-items: center;
+  color: #0b0b0b;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
 .btn-black {
   background-color: var(--color-black);
   color: var(--color-white);
@@ -99,4 +150,21 @@ ul {
 .btn-black:hover {
   background-color: transparent;
   color: var(--color-black);
+}
+
+/* Responsive Button Adjustments */
+@media (max-width: 768px) {
+  .btn {
+    padding: 14px 28px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    padding: 12px 24px;
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+  }
 }

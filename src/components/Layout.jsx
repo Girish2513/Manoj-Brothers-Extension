@@ -11,8 +11,9 @@ import './Layout.css';
 const Layout = () => {
   return (
     <div className="layout-wrapper">
+      <a href="#main-content" className="skip-link">Skip to main content</a>
       <Navbar />
-      <main className="main-content">
+      <main id="main-content" className="main-content">
         <Outlet />
       </main>
       <Footer />

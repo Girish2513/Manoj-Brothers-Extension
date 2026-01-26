@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="MB Extension">
+  <defs>
+    <linearGradient id="g" x1="0%" x2="100%" y1="0%" y2="0%">
+      <stop stop-color="#0b0b0b" offset="0%"/>
+      <stop stop-color="#111827" offset="50%"/>
+      <stop stop-color="#b91c1c" offset="100%"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <rect x="80" y="110" width="1040" height="410" rx="36" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)" stroke-width="6"/>
+  <text x="120" y="260" fill="#ffffff" font-family="'Inter', 'Segoe UI', Arial, sans-serif" font-size="72" font-weight="700" letter-spacing="4">MB EXTENSION</text>
+  <text x="120" y="340" fill="#f3f4f6" font-family="'Inter', 'Segoe UI', Arial, sans-serif" font-size="34" font-weight="500">Premium Flooring • Interior Materials • Hyderabad</text>
+  <text x="120" y="410" fill="#f3f4f6" font-family="'Inter', 'Segoe UI', Arial, sans-serif" font-size="28" font-weight="400">PVC Flooring · Vinyl Rolls · Artificial Grass · Carpets · Blinds · Industrial Sheets</text>
+</svg>

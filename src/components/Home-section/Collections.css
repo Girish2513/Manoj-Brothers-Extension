@@ -132,10 +132,29 @@
     transform: translateY(-10px);
 }
 
+@media (max-width: 1024px) {
+    .collections-section .section-title {
+        font-size: 2.5rem;
+    }
+
+    .collections-grid {
+        gap: 20px;
+    }
+
+    .collection-title {
+        font-size: 1.75rem;
+    }
+}
+
 @media (max-width: 768px) {
+    .collections-section .section-title {
+        font-size: 2.2rem;
+    }
+
     .collections-grid {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
+        gap: 18px;
     }
 
     .collection-card.large,
@@ -144,5 +163,41 @@
         grid-column: auto;
         grid-row: auto;
         height: 300px;
+    }
+
+    .collection-overlay {
+        padding: 24px;
+    }
+
+    .collection-title {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .collections-section .section-title {
+        font-size: 1.8rem;
+    }
+
+    .collections-section .section-tag {
+        font-size: 0.75rem;
+    }
+
+    .collection-card.large,
+    .collection-card.small,
+    .collection-card.tall {
+        height: 250px;
+    }
+
+    .collection-overlay {
+        padding: 20px;
+    }
+
+    .collection-title {
+        font-size: 1.4rem;
+    }
+
+    .collection-subtitle {
+        font-size: 0.75rem;
     }
 }

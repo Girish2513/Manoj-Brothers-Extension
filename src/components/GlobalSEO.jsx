@@ -5,7 +5,7 @@ const GlobalSEO = () => {
     const siteTitle = "MB Extension";
     const siteDescription = "Premium flooring and interior wholesale solutions. Specialized in PVC Membrane Film, Soffit Panels, and Artificial Grass.";
     const siteUrl = "https://mbextension.com"; // Replace with actual URL if known, or generic
-    const siteImage = "/assets/logo-mb.png"; // Placeholder, assuming assets exist or will be added
+    const siteImage = "/og-image.svg";
 
     const organizationSchema = {
         "@context": "https://schema.org",
@@ -15,7 +15,7 @@ const GlobalSEO = () => {
         "logo": `${siteUrl}${siteImage}`,
         "contactPoint": {
             "@type": "ContactPoint",
-            "telephone": "+91-9876543210", // Placeholder
+            "telephone": "+919849020651",
             "contactType": "customer service"
         },
         "sameAs": [
@@ -38,6 +38,8 @@ const GlobalSEO = () => {
             <meta property="og:title" content={siteTitle} />
             <meta property="og:description" content={siteDescription} />
             <meta property="og:image" content={siteImage} />
+            <meta property="og:image:alt" content="MB Extension flooring and interiors" />
+            <meta property="og:site_name" content={siteTitle} />
 
             {/* Twitter */}
             <meta property="twitter:card" content="summary_large_image" />
@@ -45,6 +47,7 @@ const GlobalSEO = () => {
             <meta property="twitter:title" content={siteTitle} />
             <meta property="twitter:description" content={siteDescription} />
             <meta property="twitter:image" content={siteImage} />
+            <meta property="twitter:image:alt" content="MB Extension flooring and interiors" />
 
             {/* Structured Data */}
             <script type="application/ld+json">

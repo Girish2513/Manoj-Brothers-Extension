@@ -1,6 +1,6 @@
 /* src/components/Navbar.css */
 
-/* 1. INITIAL STATE: Completely transparent */
+/* 1. INITIAL STATE: Dark by default for readability across pages */
 .navbar {
   position: fixed;
   top: 0;
@@ -8,8 +8,8 @@
   width: 100%;
   height: 80px;
 
-  /* Completely transparent - background image visible */
-  background-color: transparent;
+  /* Dark backdrop to avoid white bleed on non-hero pages */
+  background-color: rgba(0, 0, 0, 0.9);
 
   z-index: 1000;
   border-bottom: 1px solid transparent;
@@ -56,7 +56,7 @@
 }
 
 .logo-mb {
-  color: #DC2626;
+  color: #b91c1c;
 }
 
 .logo-ext {
@@ -85,12 +85,12 @@
 }
 
 .nav-link:hover {
-  color: #DC2626;
+  color: #b91c1c;
 }
 
 /* Home Active Style */
 .nav-link.home-active {
-  color: #DC2626;
+  color: #b91c1c;
 }
 
 .nav-link.home-active::after {
@@ -100,7 +100,7 @@
   bottom: 0;
   width: 100%;
   height: 2px;
-  background-color: #DC2626;
+  background-color: #b91c1c;
 }
 
 /* --- SCROLL PROGRESS BAR STYLES (NEW) --- */
@@ -118,16 +118,22 @@
   /* Must be on top of the navbar background */
 }
 
+@media (max-width: 768px) {
+  .scroll-track {
+    display: none;
+  }
+}
+
 /* The Moving Red Line */
 .scroll-bar {
   height: 100%;
-  background-color: #DC2626;
+  background-color: #b91c1c;
   /* Brand Red */
   width: 0%;
   /* Starts at 0 */
   transition: width 0.1s ease-out;
   /* Makes the movement smooth */
-  box-shadow: 0 0 10px rgba(220, 38, 38, 0.6);
+  box-shadow: 0 0 10px rgba(185, 28, 28, 0.6);
   /* Adds a nice glow */
 }
 
@@ -136,6 +142,9 @@
   display: none;
   cursor: pointer;
   z-index: 1001;
+  background: transparent;
+  border: none;
+  padding: 4px;
 }
 
 @media (max-width: 968px) {
@@ -144,21 +153,32 @@
   }
 
   .nav-menu {
-    gap: 2rem;
+    gap: 1.5rem;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 768px) {
   .navbar {
-    background-color: rgba(26, 26, 26, 0.98);
+    background-color: rgba(0, 0, 0, 0.96);
+    height: 70px;
+    border-bottom: none;
   }
 
   .navbar.scrolled {
     background-color: rgba(0, 0, 0, 0.98);
+    border-bottom: none;
   }
 
   .navbar-container {
     padding: 0 20px;
+  }
+
+  .navbar-logo {
+    font-size: 1.5rem;
   }
 
   .nav-menu {
@@ -171,7 +191,7 @@
 
   .mobile-menu {
     position: absolute;
-    top: 80px;
+    top: 70px;
     left: 0;
     width: 100%;
     background-color: rgba(26, 26, 26, 0.98);
@@ -192,13 +212,43 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
     transition: color 0.3s ease;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   }
 
   .mobile-link:hover {
-    color: #DC2626;
+    color: #b91c1c;
   }
 
   .mobile-link.home-active {
-    color: #DC2626;
+    color: #b91c1c;
+  }
+
+  .mobile-link:last-child {
+    border-bottom: none;
+  }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+  .navbar {
+    height: 65px;
+  }
+
+  .navbar-container {
+    padding: 0 15px;
+  }
+
+  .navbar-logo {
+    font-size: 1.3rem;
+  }
+
+  .mobile-menu {
+    top: 65px;
+    padding: 1.5rem;
+  }
+
+  .mobile-link {
+    font-size: 1rem;
   }
 }

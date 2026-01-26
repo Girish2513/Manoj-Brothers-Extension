@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { ArrowUpRight } from 'lucide-react'; // Ensure you have this installed: npm install lucide-react
 import './Products.css';
@@ -123,7 +123,7 @@ const ProductCard = ({ product, style, onOpenModal }) => {
 
       {/* Image Section */}
       <div className="product-image-wrapper">
-        <img src={product.img} alt={product.title} className="product-image" loading="lazy" />
+        <img src={product.img} alt={product.title} className="product-image" loading="lazy" decoding="async" />
 
         {/* Hover Overlay with Button */}
         <div className="product-overlay">
@@ -157,9 +157,9 @@ const Products = () => {
     setIsVisible(true);
   }, []);
 
-  const filteredProducts = productsData.filter(product =>
-    filter === 'all' || product.category === filter
-  );
+  const filteredProducts = useMemo(() => (
+    productsData.filter(product => filter === 'all' || product.category === filter)
+  ), [filter]);
 
   const categories = [
     { id: 'all', label: 'All Products' },

@@ -53,7 +53,7 @@
 
 .close-btn:hover {
     transform: rotate(90deg);
-    background: #DC2626;
+    background: #b91c1c;
     color: white;
 }
 
@@ -87,7 +87,7 @@
     font-size: 0.875rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: #DC2626;
+    color: #b91c1c;
     font-weight: 700;
     margin-bottom: 0.75rem;
 }
@@ -118,7 +118,7 @@
 
 
 .modal-cta-btn {
-    background: #DC2626;
+    background: #b91c1c;
     color: white;
     border: none;
     padding: 1rem 2.5rem;
@@ -161,9 +161,24 @@
 }
 
 /* Mobile Responsive */
+@media (max-width: 1024px) {
+    .modal-content {
+        max-width: 800px;
+    }
+
+    .modal-details {
+        padding: 2.5rem;
+    }
+
+    .modal-title {
+        font-size: 2rem;
+    }
+}
+
 @media (max-width: 768px) {
     .modal-content {
         max-height: 85vh;
+        max-width: 95%;
     }
 
     .modal-body {
@@ -185,8 +200,63 @@
         font-size: 1.75rem;
     }
 
+    .modal-desc {
+        font-size: 1rem;
+    }
+
     .close-btn {
         top: 1rem;
         right: 1rem;
+        width: 36px;
+        height: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-backdrop {
+        padding: 1rem;
+    }
+
+    .modal-content {
+        max-height: 90vh;
+        border-radius: 15px;
+    }
+
+    .modal-image-container {
+        height: 200px;
+    }
+
+    .modal-details {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .modal-category {
+        font-size: 0.8rem;
+    }
+
+    .modal-title {
+        font-size: 1.5rem;
+    }
+
+    .modal-desc {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+    }
+
+    .modal-tagline {
+        font-size: 0.9rem;
+    }
+
+    .modal-cta-btn {
+        padding: 0.875rem 2rem;
+        font-size: 0.95rem;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .close-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 1.3rem;
     }
 }

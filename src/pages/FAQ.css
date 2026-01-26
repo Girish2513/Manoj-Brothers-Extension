@@ -70,7 +70,7 @@
 }
 
 .faq-question:hover {
-    color: #DC2626;
+    color: #b91c1c;
 }
 
 .faq-icon {
@@ -83,7 +83,7 @@
 
 .faq-item.active .faq-icon {
     transform: rotate(45deg);
-    color: #DC2626;
+    color: #b91c1c;
 }
 
 .faq-answer {
@@ -102,7 +102,7 @@
 }
 
 .faq-cta-box {
-    background: #DC2626;
+    background: #b91c1c;
     color: white;
     text-align: center;
     padding: 3rem;
@@ -119,4 +119,104 @@
     color: white;
     font-weight: 700;
     text-decoration: underline;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .faq-title {
+        font-size: 3rem;
+    }
+
+    .faq-subtitle {
+        font-size: 1.15rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .faq-hero {
+        padding: 6rem 1.5rem 4rem;
+        margin-top: -70px;
+        padding-top: calc(6rem + 70px);
+    }
+
+    .faq-title {
+        font-size: 2.5rem;
+    }
+
+    .faq-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .faq-container {
+        padding: 0 1.5rem;
+    }
+
+    .faq-question {
+        font-size: 1rem;
+        padding: 1.25rem;
+    }
+
+    .faq-answer {
+        padding: 0 1.25rem;
+    }
+
+    .faq-item.active .faq-answer {
+        max-height: 250px;
+    }
+
+    .faq-cta-box {
+        padding: 2.5rem;
+        margin-top: 3rem;
+    }
+
+    .faq-cta-title {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .faq-hero {
+        padding: 5rem 1rem 3rem;
+        margin-top: -70px;
+        padding-top: calc(5rem + 70px);
+    }
+
+    .faq-title {
+        font-size: 2rem;
+    }
+
+    .faq-subtitle {
+        font-size: 1rem;
+    }
+
+    .faq-page {
+        padding-bottom: 4rem;
+    }
+
+    .faq-container {
+        padding: 0 1rem;
+    }
+
+    .faq-question {
+        font-size: 0.95rem;
+        padding: 1rem;
+    }
+
+    .faq-answer {
+        padding: 0 1rem;
+        font-size: 0.9rem;
+    }
+
+    .faq-icon {
+        font-size: 1.3rem;
+    }
+
+    .faq-cta-box {
+        padding: 2rem 1.5rem;
+        border-radius: 15px;
+    }
+
+    .faq-cta-title {
+        font-size: 1.2rem;
+    }
 }

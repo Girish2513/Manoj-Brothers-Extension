@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { HashLink } from 'react-router-hash-link';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import './Navbar.css';
 
@@ -8,6 +8,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const { pathname } = useLocation();
 
   const toggleMenu = useCallback(() => setIsOpen(!isOpen), [isOpen]);
 
@@ -65,36 +66,80 @@ const Navbar = () => {
         {/* DESKTOP MENU */}
         <div className="nav-menu">
           {/* Home stays as HashLink to scroll to top if on homepage */}
-          <HashLink smooth to="/#home" className="nav-link home-active">HOME</HashLink>
+          <HashLink
+            smooth
+            to="/#home"
+            className={`nav-link ${pathname === '/' ? 'home-active' : ''}`}
+          >
+            HOME
+          </HashLink>
           
           {/* THESE MUST BE STANDARD LINKS FOR SEPARATE PAGES */}
-          <Link to="/products" className="nav-link">PRODUCTS</Link>
+          <Link to="/products" className={`nav-link ${pathname === '/products' ? 'home-active' : ''}`}>PRODUCTS</Link>
           
           {/* UPDATED: Changed from HashLink to Link */}
-          <Link to="/about" className="nav-link">ABOUT</Link>
+          <Link to="/about" className={`nav-link ${pathname === '/about' ? 'home-active' : ''}`}>ABOUT</Link>
           
-          <Link to="/faq" className="nav-link">FAQ</Link>
-          <Link to="/contact" className="nav-link">CONTACT</Link> 
+          <Link to="/faq" className={`nav-link ${pathname === '/faq' ? 'home-active' : ''}`}>FAQ</Link>
+          <Link to="/contact" className={`nav-link ${pathname === '/contact' ? 'home-active' : ''}`}>CONTACT</Link> 
         </div>
 
         {/* MOBILE MENU ICON */}
-        <div className="mobile-icon" onClick={toggleMenu}>
+        <button
+          className="mobile-icon"
+          onClick={toggleMenu}
+          aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={isOpen}
+          aria-controls="mobile-menu"
+          type="button"
+        >
           {isOpen ? <X size={28} color="white" /> : <Menu size={28} color="white" />}
-        </div>
+        </button>
       </div>
 
       {/* MOBILE DROPDOWN */}
       {isOpen && (
-        <div className="mobile-menu">
-          <HashLink smooth to="/#home" className="mobile-link home-active" onClick={toggleMenu}>HOME</HashLink>
+        <div className="mobile-menu" id="mobile-menu" role="menu">
+          <HashLink
+            smooth
+            to="/#home"
+            className={`mobile-link ${pathname === '/' ? 'home-active' : ''}`}
+            onClick={toggleMenu}
+          >
+            HOME
+          </HashLink>
           
-          <Link to="/products" className="mobile-link" onClick={toggleMenu}>PRODUCTS</Link>
+          <Link
+            to="/products"
+            className={`mobile-link ${pathname === '/products' ? 'home-active' : ''}`}
+            onClick={toggleMenu}
+          >
+            PRODUCTS
+          </Link>
           
           {/* UPDATED: Changed from HashLink to Link */}
-          <Link to="/about" className="mobile-link" onClick={toggleMenu}>ABOUT</Link>
+          <Link
+            to="/about"
+            className={`mobile-link ${pathname === '/about' ? 'home-active' : ''}`}
+            onClick={toggleMenu}
+          >
+            ABOUT
+          </Link>
           
-          <Link to="/faq" className="mobile-link" onClick={toggleMenu}>FAQ</Link>
-          <Link to="/contact" className="mobile-link" onClick={toggleMenu}>CONTACT</Link>
+          <Link
+            to="/faq"
+            className={`mobile-link ${pathname === '/faq' ? 'home-active' : ''}`}
+            onClick={toggleMenu}
+          >
+            FAQ
+          </Link>
+          <Link
+            to="/contact"
+            className={`mobile-link ${pathname === '/contact' ? 'home-active' : ''}`}
+            onClick={toggleMenu}
+          >
+            CONTACT
+          </Link>
         </div>
       )}
     </nav>

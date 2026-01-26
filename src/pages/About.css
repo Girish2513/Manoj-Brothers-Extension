@@ -121,6 +121,49 @@
   line-height: 1.6;
 }
 
+/* Responsive adjustments for hero */
+@media (max-width: 1024px) {
+  .about-hero h1 {
+    font-size: 3rem;
+  }
+
+  .about-hero p {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    padding: 6rem 1.5rem 4rem;
+    margin-top: -72px;
+    padding-top: calc(6rem + 72px);
+  }
+
+  .about-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .about-hero p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero {
+    padding: 5rem 1rem 3rem;
+    margin-top: -72px;
+    padding-top: calc(5rem + 72px);
+  }
+
+  .about-hero h1 {
+    font-size: 2rem;
+  }
+
+  .about-hero p {
+    font-size: 1rem;
+  }
+}
+
 /* --- 2. Promise Section --- */
 .about-promise {
   padding: 6rem 0;
@@ -143,6 +186,35 @@
 .about-promise p {
   font-size: 1.25rem;
   color: var(--about-text-grey);
+}
+
+/* Promise responsive */
+@media (max-width: 768px) {
+  .about-promise {
+    padding: 5rem 1.5rem;
+  }
+
+  .about-promise h2 {
+    font-size: 2rem;
+  }
+
+  .about-promise p {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-promise {
+    padding: 4rem 1rem;
+  }
+
+  .about-promise h2 {
+    font-size: 1.75rem;
+  }
+
+  .about-promise p {
+    font-size: 1.05rem;
+  }
 }
 
 /* --- 3. Timeline Section --- */
@@ -288,27 +360,94 @@
 }
 
 /* Mobile Timeline */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .about-timeline {
+    padding: 5rem 2rem;
+  }
+
+  .about-timeline h2 {
+    font-size: 2.2rem;
+  }
+
+  /* Stack timeline items on a single side */
+  .timeline {
+    max-width: 900px;
+  }
+
   .timeline-line {
-    left: 20px;
+    left: 24px;
   }
 
   .timeline-item {
     width: 100%;
     left: 0;
-    padding-left: 50px;
+    padding-left: 60px;
     padding-right: 0;
     text-align: left;
   }
 
-  .timeline-item.left {
+  .timeline-item.left,
+  .timeline-item.right {
+    left: 0;
     text-align: left;
     padding-right: 0;
+    padding-left: 60px;
   }
 
   .timeline-item.left::after,
   .timeline-item.right::after {
     left: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-timeline {
+    padding: 4.5rem 1.5rem;
+  }
+
+  .about-timeline h2 {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .timeline-line {
+    left: 18px;
+  }
+
+  .timeline-item {
+    padding-left: 52px;
+    padding-top: 1.25rem;
+  }
+
+  .timeline-content h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-timeline {
+    padding: 4rem 1rem;
+  }
+
+  .about-timeline h2 {
+    font-size: 1.75rem;
+  }
+
+  .timeline-item {
+    padding-left: 44px;
+    padding-top: 1.4rem;
+  }
+
+  .timeline-content {
+    padding: 1.2rem;
+  }
+
+  .timeline-content .year {
+    font-size: 1rem;
+  }
+
+  .timeline-content h3 {
+    font-size: 1.2rem;
   }
 }
 
@@ -337,6 +476,46 @@
 @media (min-width: 768px) {
   .pillars-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Additional responsive breakpoints for pillars */
+@media (max-width: 1024px) {
+  .about-pillars h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-pillars {
+    padding: 5rem 1.5rem;
+  }
+
+  .about-pillars h2 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .pillar-card {
+    padding: 2.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-pillars {
+    padding: 4rem 1rem;
+  }
+
+  .about-pillars h2 {
+    font-size: 1.75rem;
+  }
+
+  .pillar-icon {
+    font-size: 2rem;
+  }
+
+  .pillar-card h3 {
+    font-size: 1.15rem;
   }
 }
 
@@ -526,4 +705,72 @@
   background-color: var(--about-text-black);
   color: white;
   transform: translateY(-2px);
+}
+
+/* Responsive for trust and CTA */
+@media (max-width: 1024px) {
+  .about-trust h2,
+  .cta-section h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-trust {
+    padding: 5rem 1.5rem;
+  }
+
+  .about-trust h2 {
+    font-size: 1.8rem;
+  }
+
+  .trust-list li {
+    font-size: 1rem;
+    padding: 0.875rem 1.25rem;
+  }
+
+  .cta-section {
+    padding: 5rem 1.5rem;
+  }
+
+  .cta-section h2 {
+    font-size: 2rem;
+  }
+
+  .cta-section p {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-trust {
+    padding: 4rem 1rem;
+  }
+
+  .about-trust h2 {
+    font-size: 1.6rem;
+  }
+
+  .trust-list li {
+    font-size: 0.95rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .cta-section {
+    padding: 4rem 1rem;
+  }
+
+  .cta-section h2 {
+    font-size: 1.75rem;
+  }
+
+  .cta-section p {
+    font-size: 1.05rem;
+  }
+
+  .btn {
+    padding: 0.875rem 1.75rem;
+    font-size: 0.95rem;
+    width: 100%;
+  }
 }

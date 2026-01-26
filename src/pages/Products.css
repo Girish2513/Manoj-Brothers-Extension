@@ -359,14 +359,71 @@
 }
 
 /* --- RESPONSIVE --- */
+@media (max-width: 1200px) {
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .products-hero {
+    padding: 4rem 4rem 2rem;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.15rem;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+  }
+
+  .products-grid-section {
+    padding: 0 1.5rem 5rem;
+  }
+}
+
 @media (max-width: 768px) {
+  .products-hero {
+    padding: 3.5rem 2rem 1.5rem;
+    margin-top: -70px;
+    padding-top: calc(3.5rem + 70px);
+  }
+
   .hero-title {
     font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .hero-stats {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .stat-separator {
+    display: none;
+  }
+
+  .stat-item {
+    min-width: 100px;
   }
 
   .products-grid {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1.5rem;
+  }
+
+  .products-grid-section {
+    padding: 0 1.5rem 4rem;
   }
 
   .filter-container {
@@ -378,5 +435,83 @@
 
   .filter-btn {
     white-space: nowrap;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .product-image-wrapper {
+    height: 240px;
+  }
+
+  .product-info {
+    padding: 20px 24px;
+  }
+
+  .product-name {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .products-hero {
+    padding: 3rem 1.5rem 1.5rem;
+    margin-bottom: 2rem;
+    margin-top: -70px;
+    padding-top: calc(3rem + 70px);
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .stat-value {
+    font-size: 1.3rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+  }
+
+  .filter-section {
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .products-grid-section {
+    padding: 0 1rem 3rem;
+  }
+
+  .products-grid {
+    gap: 1.2rem;
+  }
+
+  .product-image-wrapper {
+    height: 220px;
+  }
+
+  .product-info {
+    padding: 16px 20px;
+  }
+
+  .product-category {
+    font-size: 0.7rem;
+  }
+
+  .product-name {
+    font-size: 1.15rem;
+  }
+
+  .product-desc-short {
+    font-size: 0.85rem;
   }
 }

@@ -19,9 +19,29 @@ const Footer = () => {
           {/* Contact Column */}
           <div>
             <h3>Contact Us</h3>
-            <p className="footer-text">📍 D.No. 5-1-27, Gowliguda, Hyderabad</p>
-            <p className="footer-text">📞 98490 20651 | 99483 32000</p>
-            <p className="footer-text">✉️ manojextension@gmail.com</p>
+            <p className="footer-text">
+              <a
+                className="footer-contact-link"
+                href="https://maps.google.com/?q=D.No.%205-1-27%2C%20Gowliguda%2C%20Hyderabad"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                📍 D.No. 5-1-27, Gowliguda, Hyderabad
+              </a>
+            </p>
+            <p className="footer-text">
+              <a className="footer-contact-link" href="tel:+919849020651">📞 98490 20651</a>
+              <span className="footer-contact-separator"> | </span>
+              <a className="footer-contact-link" href="tel:+919948332000">99483 32000</a>
+            </p>
+            <p className="footer-text">
+              <a
+                className="footer-contact-link"
+                href="mailto:manojextension@gmail.com?subject=Inquiry%20about%20MB%20Extension&body=Hey!%20I%27m%20interested%20in%20your%20business%20MB%20Extension.%20Please%20share%20details."
+              >
+                ✉️ manojextension@gmail.com
+              </a>
+            </p>
           </div>
 
           {/* Quick Links Column */}

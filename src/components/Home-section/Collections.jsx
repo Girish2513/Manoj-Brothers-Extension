@@ -45,7 +45,7 @@ const Collections = () => {
                 <div className="collections-grid">
                     {collections.map((item) => (
                         <Link to="/products" key={item.id} className={`collection-card ${item.size}`}>
-                            <img src={item.image} alt={item.title} className="collection-img" />
+                            <img src={item.image} alt={item.title} className="collection-img" loading="lazy" decoding="async" />
                             <div className="collection-overlay">
                                 <div className="collection-content">
                                     <span className="collection-subtitle">{item.subtitle}</span>

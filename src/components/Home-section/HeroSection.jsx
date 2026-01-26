@@ -45,6 +45,8 @@ const HeroSection = () => {
           src={heroBg}
           alt="Premium Flooring Showroom"
           className="hero-bg-image"
+          loading="eager"
+          decoding="async"
         />
       </div>
 
