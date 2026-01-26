@@ -1,8 +1,83 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import './Contact.css';
 
 const Contact = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+    });
+    const [status, setStatus] = useState('idle'); // idle, loading, success, error
+    const [statusMessage, setStatusMessage] = useState('');
+
+    // Replace with your Google Apps Script deployment URL
+    const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxHeKYcSG2SQwbeSsqw6W-ciKCUmbkeWNS7ksImlFehUExrBomTAsxm1-bH4ih1DdVT/exec";
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        // Validation
+        if (!formData.name.trim()) {
+            setStatus('error');
+            setStatusMessage('Please enter your name');
+            return;
+        }
+        if (!formData.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+            setStatus('error');
+            setStatusMessage('Please enter a valid email');
+            return;
+        }
+        if (!formData.phone.trim()) {
+            setStatus('error');
+            setStatusMessage('Please enter your phone number');
+            return;
+        }
+        if (!formData.message.trim()) {
+            setStatus('error');
+            setStatusMessage('Please enter your message');
+            return;
+        }
+
+        setStatus('loading');
+        setStatusMessage('');
+
+        try {
+            const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
+                method: 'POST',
+                body: JSON.stringify(formData),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                setStatus('success');
+                setStatusMessage('✓ Thank you! Well get back to you shortly.');
+                setFormData({ name: '', email: '', phone: '', message: '' });
+                // Clear success message after 5 seconds
+                setTimeout(() => setStatus('idle'), 5000);
+            } else {
+                setStatus('error');
+                setStatusMessage(result.message || 'Something went wrong. Please try again.');
+            }
+        } catch (error) {
+            setStatus('error');
+            setStatusMessage('Failed to send message. Please try again or call us directly.');
+        }
+    };
+
     return (
         <div className="contact-page">
             <Helmet>
@@ -55,28 +130,70 @@ const Contact = () => {
 
                 {/* Contact Form */}
                 <div className="contact-form-card">
-                    <form onSubmit={(e) => e.preventDefault()}>
+                    {statusMessage && (
+                        <div className={`form-feedback form-feedback-${status}`} role="alert">
+                            {statusMessage}
+                        </div>
+                    )}
+                    <form onSubmit={handleSubmit}>
                         <div className="form-group">
                             <label className="form-label">Name</label>
-                            <input type="text" className="form-input" placeholder="Your Name" />
+                            <input
+                                type="text"
+                                name="name"
+                                className="form-input"
+                                placeholder="Your Name"
+                                value={formData.name}
+                                onChange={handleChange}
+                                disabled={status === 'loading'}
+                            />
                         </div>
 
                         <div className="form-group">
                             <label className="form-label">Email</label>
-                            <input type="email" className="form-input" placeholder="your@email.com" />
+                            <input
+                                type="email"
+                                name="email"
+                                className="form-input"
+                                placeholder="your@email.com"
+                                value={formData.email}
+                                onChange={handleChange}
+                                disabled={status === 'loading'}
+                            />
                         </div>
 
                         <div className="form-group">
                             <label className="form-label">Phone</label>
-                            <input type="tel" className="form-input" placeholder="+91" />
+                            <input
+                                type="tel"
+                                name="phone"
+                                className="form-input"
+                                placeholder="+91"
+                                value={formData.phone}
+                                onChange={handleChange}
+                                disabled={status === 'loading'}
+                            />
                         </div>
 
                         <div className="form-group">
                             <label className="form-label">Message</label>
-                            <textarea className="form-textarea" placeholder="Tell us about your project requirements..."></textarea>
+                            <textarea
+                                name="message"
+                                className="form-textarea"
+                                placeholder="Tell us about your project requirements..."
+                                value={formData.message}
+                                onChange={handleChange}
+                                disabled={status === 'loading'}
+                            ></textarea>
                         </div>
 
-                        <button type="submit" className="submit-btn">Send Message</button>
+                        <button
+                            type="submit"
+                            className="submit-btn"
+                            disabled={status === 'loading'}
+                        >
+                            {status === 'loading' ? 'Sending...' : 'Send Message'}
+                        </button>
                     </form>
                 </div>
             </div>
