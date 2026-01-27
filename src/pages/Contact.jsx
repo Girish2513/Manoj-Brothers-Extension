@@ -13,7 +13,7 @@ const Contact = () => {
     const [statusMessage, setStatusMessage] = useState('');
 
     // Replace with your Google Apps Script deployment URL
-    const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbybG-67yiu8GCoDGPVvrR3kE3SLVBKTZWaxhh9fiYmH5ioEP-mfUnOsxjcNzmFpZSitZQ/exec";
+    const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbycMRU9jIhZHN3-OkXoBAYkjzNRLDQNVx9EAjX2EqaCaf1tibcNTyqpp_abip8WiG3z/exec";
 
     //changes
     const handleChange = (e) => {
