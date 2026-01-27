@@ -14,6 +14,8 @@ const Contact = () => {
 
     // Replace with your Google Apps Script deployment URL
     const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwbaG7kxRwbh3KmmxdFv9Nuf71S9eo0tMkyS2p7mx9KgqKknfsrkyRdDMlPc6um9spmLg/exec";
+
+    //changes
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prev => ({
