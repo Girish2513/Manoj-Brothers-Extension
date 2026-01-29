@@ -764,12 +764,6 @@ For licensing inquiries, contact: manojextension@gmail.com
 
 ---
 
-## 📸 Screenshots
-
-> Add screenshots of your website here once deployed
-
----
-
 ## 🔗 Links
 
 - **Live Website**: [manojbrothersextension.com](http://manojbrothersextension.com)
