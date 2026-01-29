@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import './FAQ.css';
 
 const FAQItem = ({ question, answer }) => {
@@ -40,6 +41,13 @@ const FAQ = () => {
 
     return (
         <div className="faq-page">
+            <Helmet>
+                <title>FAQs | Manoj Brothers Extension | Flooring Experts in Hyderabad</title>
+                <meta
+                    name="description"
+                    content="Common questions about PVC flooring, custom mats, and bulk orders at Manoj Brothers Extension, Hyderabad."
+                />
+            </Helmet>
             <section className="faq-hero">
                 <h1 className="faq-title">Frequently Asked Questions</h1>
                 <p className="faq-subtitle">Everything you need to know about our products and services.</p>

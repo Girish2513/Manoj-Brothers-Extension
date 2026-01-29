@@ -6,19 +6,25 @@ const About = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "MB Extension",
+    "name": "Manoj Brothers Extension (MB Extension)",
     "image": "",
     "description": "MB Extension is a trusted flooring and interior materials wholesaler in Hyderabad, offering PVC flooring, vinyl rolls, artificial grass, carpets, and interior solutions.",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Manoj Brothers Extension",
+      "streetAddress": "D.No. 5-1-27, 5-1-1045 to 1047, Opp. Mahakali Kaman, Near Ram Mandir, Gowliguda Chaman",
       "addressLocality": "Hyderabad",
       "addressRegion": "Telangana",
+      "postalCode": "500012",
       "addressCountry": "IN"
     },
-    "telephone": "+919849025000",
+    "telephone": "+919849020651",
     "openingHours": "Mo-Sa 10:00-20:00",
-    "priceRange": "$$"
+    "priceRange": "$$",
+    "founder": [
+      { "@type": "Person", "name": "Shiv Kumar Dalmia" },
+      { "@type": "Person", "name": "Ashish Dalmia" },
+      { "@type": "Person", "name": "Ankur Dalmia" }
+    ]
   };
 
   return (

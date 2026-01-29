@@ -176,8 +176,9 @@ const Products = () => {
   return (
     <div className="products-page">
       <Helmet>
-        <title>Our Products | Manoj Brothers Extension</title>
-        <meta name="description" content="Browse our wide range of Vinyl Flooring, Artificial Grass, Carpets, and more." />
+        <title>Our Products | PVC Vinyl, Artificial Grass, Carpets & Foam - MB Extension</title>
+        <meta name="description" content="Browse our wholesale collection of Cotton Coated Fabrics, PVC Sheeting, EPE Foams, P.U. Foams, Velvet Items, Cinema Seats, Jute, and Wallpaper. We are specialists in PVC Membrane Film and Soffit Panels." />
+        <meta name="keywords" content="Cotton Coated Fabrics, PVC Sheeting, PVC Vinyl Flooring, EPE Foams, PU Foams, Foam Bonds, Furnishing, Velvet Items, Cinema Seats, Jute, Wallpaper, Industrial Packaging, PVC Membrane Film, Artificial Grass, Soffit Panels" />
       </Helmet>
 
       {/* Hero Section */}

@@ -110,10 +110,10 @@ const Contact = () => {
   return (
     <div className="contact-page" id="main-content">
       <Helmet>
-        <title>Contact Us | Manoj Brothers Extension</title>
+        <title>Contact Us | Manoj Brothers Extension | Gowliguda, Hyderabad</title>
         <meta
           name="description"
-          content="Visit our showroom in Hyderabad or contact us for flooring, furnishing, and interior materials. Call 98490 20651."
+          content="Visit Manoj Brothers Extension (MB Extension) in Gowliguda Chaman, Hyderabad. Contact Shiv Kumar Dalmia or Ashish Dalmia at 98490 20651 for all wholesale flooring and furnishing needs."
         />
       </Helmet>
 
@@ -133,9 +133,11 @@ const Contact = () => {
             <div className="info-item">
               <span className="info-label">Visit Showroom</span>
               <div className="info-value">
-                D.No. 5-1-27, Gowliguda
+                D.No. 5-1-27, 5-1-1045 to 1047,
                 <br />
-                Hyderabad, Telangana
+                Opp. Mahakali Kaman, Near Ram Mandir,
+                <br />
+                Gowliguda Chaman, Hyderabad - 500 012.
               </div>
             </div>
 

@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://mbextension.com/sitemap.xml
+Sitemap: http://manojbrothersextension.com/sitemap.xml
