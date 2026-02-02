@@ -4,19 +4,52 @@ import { Helmet } from 'react-helmet-async';
 const GlobalSEO = () => {
     const siteTitle = "MB Extension";
     const siteDescription = "Premium flooring and interior wholesale solutions. Specialized in PVC Membrane Film, Soffit Panels, and Artificial Grass.";
-    const siteUrl = "https://mbextension.com"; // Replace with actual URL if known, or generic
-    const siteImage = "/og-image.svg";
+    const siteUrl = "https://www.manojbrothersextension.com";
+    const siteImage = "/assets/mb-logo.png";
 
     const organizationSchema = {
         "@context": "https://schema.org",
-        "@type": "Organization",
+        "@type": "HomeAndConstructionBusiness",
         "name": "Manoj Brothers Extension",
+        "image": `${siteUrl}${siteImage}`,
+        "logo": `${siteUrl}/assets/mb-logo.png`, // improved path if available
         "url": siteUrl,
-        "logo": `${siteUrl}${siteImage}`,
+        "telephone": "+919849020651",
+        "priceRange": "$$",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "D.No. 5-1-27, Opp. Mahakali Kaman, Near Ram Mandir, Gowliguda Chaman",
+            "addressLocality": "Hyderabad",
+            "addressRegion": "Telangana",
+            "postalCode": "500012",
+            "addressCountry": "IN"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 17.3850,
+            "longitude": 78.4867
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday"
+                ],
+                "opens": "10:00",
+                "closes": "20:00"
+            }
+        ],
         "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "+919849020651",
-            "contactType": "customer service"
+            "contactType": "sales",
+            "areaServed": "IN",
+            "availableLanguage": "en"
         },
         "sameAs": [
             "https://www.facebook.com/manojbrothers",

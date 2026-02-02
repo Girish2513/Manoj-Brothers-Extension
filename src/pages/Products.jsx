@@ -179,6 +179,31 @@ const Products = () => {
         <title>Our Products | PVC Vinyl, Artificial Grass, Carpets & Foam - MB Extension</title>
         <meta name="description" content="Browse our wholesale collection of Cotton Coated Fabrics, PVC Sheeting, EPE Foams, P.U. Foams, Velvet Items, Cinema Seats, Jute, and Wallpaper. We are specialists in PVC Membrane Film and Soffit Panels." />
         <meta name="keywords" content="Cotton Coated Fabrics, PVC Sheeting, PVC Vinyl Flooring, EPE Foams, PU Foams, Foam Bonds, Furnishing, Velvet Items, Cinema Seats, Jute, Wallpaper, Industrial Packaging, PVC Membrane Film, Artificial Grass, Soffit Panels" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "itemListElement": productsData.map((product, index) => ({
+              "@type": "ListItem",
+              "position": index + 1,
+              "item": {
+                "@type": "Product",
+                "name": product.title,
+                "description": product.desc,
+                "image": product.img || "https://mbextension.com/og-image.svg",
+                "brand": {
+                  "@type": "Brand",
+                  "name": "MB Extension"
+                },
+                "offers": {
+                  "@type": "Offer",
+                  "priceCurrency": "INR",
+                  "availability": "https://schema.org/InStock"
+                }
+              }
+            }))
+          })}
+        </script>
       </Helmet>
 
       {/* Hero Section */}

@@ -7,7 +7,7 @@ const About = () => {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Manoj Brothers Extension (MB Extension)",
-    "image": "",
+    "image": "https://www.manojbrothersextension.com/assets/mb-logo.png",
     "description": "MB Extension is a trusted flooring and interior materials wholesaler in Hyderabad, offering PVC flooring, vinyl rolls, artificial grass, carpets, and interior solutions.",
     "address": {
       "@type": "PostalAddress",
@@ -40,13 +40,10 @@ const About = () => {
       <main className="about-page">
         {/* 1. Hero / Page Introduction */}
         <section className="about-hero">
-          <div className="container about-hero-content">
-            <h1 className="fade-up">A Hyderabad Legacy in Flooring & Interiors</h1>
-            <p className="fade-up delay-1">
-              MB Extension is a trusted flooring and interior materials wholesaler in Hyderabad,
-              built on family values, quality craftsmanship, and long-term customer relationships.
-              For over 17 years, we have supplied PVC flooring, vinyl rolls, artificial grass,
-              and interior solutions to homes and businesses across Telangana.
+          <div className="about-hero-content">
+            <h1>A Hyderabad Legacy in Flooring & Interiors</h1>
+            <p className="about-text">
+              Established in 2008, <strong>Manoj Brothers Extension</strong> is the <strong>leading wholesale shop in Hyderabad</strong> for premium flooring and furnishing. With <strong>17+ years of experience</strong>, we supply high-quality products—from PVC vinyl and artificial grass to <strong>industrial foams and soffit panels</strong>—at competitive prices, backed by honest advice and reliable service.
             </p>
           </div>
         </section>

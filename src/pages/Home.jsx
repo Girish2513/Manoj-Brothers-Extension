@@ -18,9 +18,9 @@ const Home = () => {
   return (
     <div className="home-page">
       <Helmet>
-        <title>Manoj Brothers Extension (MB) | Best Flooring & Furnishing in Hyderabad</title>
-        <meta name="description" content="Welcome to Manoj Brothers Extension (MB Extension). We are Hyderabad's top dealers for PVC Vinyl Flooring, Artificial Grass, Wallpapers, Carpets, and Industrial Foam. Visit our showroom in Gowliguda." />
-        <meta name="keywords" content="Manoj Brothers Extension, MB Extension, Flooring Hyderabad, Artificial Grass, PVC Vinyl, Best Floor Mats, Shiv Kumar Dalmia, Cotton Coated Fabrics, Soffit Panels" />
+        <title>Wholesale Flooring & Furnishing Hyderabad | PVC Vinyl, Artificial Grass, Carpets | MB Extension</title>
+        <meta name="description" content="Hyderabad's massive wholesale stock of PVC Vinyl Flooring, Artificial Grass, Wallpapers, and Industrial Foams. One-stop shop for architects and interior designers in Gowliguda." />
+        <meta name="keywords" content="Wholesale PVC Flooring Hyderabad, Artificial Grass Dealers, Vinyl Rolls Bulk, Industrial Foam Suppliers, Carpet And Rugs Wholesale, Wallpaper Shop Gowliguda" />
       </Helmet>
       <CurtainReveal />
       <HeroSection />

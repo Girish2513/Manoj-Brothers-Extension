@@ -64,12 +64,22 @@
 
 .copyright {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 40px;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  color: #9ca3af;
+  font-size: 0.875rem;
   text-align: center;
-  color: rgba(255, 255, 255, 0.4);
-  font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.copyright p {
+  margin: 0;
+  text-align: center;
 }
 
 @media (max-width: 1024px) {

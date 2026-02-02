@@ -160,18 +160,19 @@
 
     .whatsapp-button {
         width: 56px;
-        /* Smaller button */
+        /* Match Location button size on tablet */
         height: 56px;
-        padding: 14px;
-        /* Less padding */
+        padding: 0;
+        /* Remove padding to let icon occupy full space */
     }
 
     .whatsapp-button i,
     .whatsapp-button img {
-        font-size: 26px;
-        /* Smaller icon */
-        width: 26px;
-        height: 26px;
+        font-size: 32px;
+        /* Keep font-size for icons if needed */
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
     }
 
     .whatsapp-popup {
@@ -192,17 +193,19 @@
 
     .whatsapp-button {
         width: 52px;
-        /* Even smaller */
+        /* Match Location button size on mobile (52x52) */
         height: 52px;
-        padding: 12px;
+        padding: 0;
+        /* Remove padding to let icon occupy full space */
     }
 
     .whatsapp-button i,
     .whatsapp-button img {
-        font-size: 24px;
-        /* Smaller icon */
-        width: 24px;
-        height: 24px;
+        font-size: 30px;
+        /* Keep font-size for icons if needed */
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
     }
 
     .whatsapp-popup {

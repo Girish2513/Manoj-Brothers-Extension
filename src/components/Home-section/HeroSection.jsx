@@ -59,8 +59,8 @@ const HeroSection = () => {
         </h1>
 
         <p className="hero-subtitle">
-          Hyderabad’s Trusted Wholesaler Since 2008. Experience the perfect blend of
-          luxury, durability, and style.
+          Your One-Stop Wholesale Destination for PVC Flooring, Artificial Grass, and Interiors.
+          Massive stock and variety for every residential and commercial need.
         </p>
 
         <div className="hero-cta-group">
