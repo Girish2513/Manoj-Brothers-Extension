@@ -57,6 +57,10 @@ const Footer = () => {
 
         <div className="copyright">
           <p>&copy; {new Date().getFullYear()} Manoj Brothers Extension. All Rights Reserved.</p>
+          <div className="developer-credits">
+            <p className="designed-by">Designed by <a href="https://www.instagram.com/itswebaura?igsh=MWxjdWJnYWYxdGdzYg==" target="_blank" rel="noopener noreferrer" className="webaura-text">WebAura</a></p>
+            <p className="developers">S.Girish • G.Druvath Kumar • R.Venu Kumar</p>
+          </div>
         </div>
       </div>
     </footer>

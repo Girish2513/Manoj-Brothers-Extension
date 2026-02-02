@@ -72,8 +72,10 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 0.5rem;
   width: 100%;
 }
 
@@ -120,4 +122,40 @@
   .footer-text {
     font-size: 0.9rem;
   }
+}
+
+.developer-credits {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.designed-by {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.5px;
+  margin: 0;
+  text-transform: none;
+}
+
+.webaura-text {
+  color: var(--color-red-accent);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.webaura-text:hover {
+  text-decoration: underline;
+  opacity: 0.9;
+}
+
+.developers {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0;
+  text-transform: none;
+  letter-spacing: 0.5px;
 }
