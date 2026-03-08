@@ -98,38 +98,40 @@ const Navbar = () => {
       </div>
 
       {/* MOBILE DROPDOWN */}
-      {isOpen && (
-        <div className="mobile-menu" id="mobile-menu" role="menu">
+        <div className={`mobile-menu ${isOpen ? 'mobile-menu-open' : ''}`} id="mobile-menu" role="menu" aria-hidden={!isOpen}>
           <HashLink
             smooth
             to="/#home"
             className={`mobile-link ${pathname === '/' ? 'home-active' : ''}`}
             onClick={toggleMenu}
+            tabIndex={isOpen ? 0 : -1}
           >
             HOME
           </HashLink>
-          
+
           <Link
             to="/products"
             className={`mobile-link ${pathname === '/products' ? 'home-active' : ''}`}
             onClick={toggleMenu}
+            tabIndex={isOpen ? 0 : -1}
           >
             PRODUCTS
           </Link>
-          
-          {/* UPDATED: Changed from HashLink to Link */}
+
           <Link
             to="/about"
             className={`mobile-link ${pathname === '/about' ? 'home-active' : ''}`}
             onClick={toggleMenu}
+            tabIndex={isOpen ? 0 : -1}
           >
             ABOUT
           </Link>
-          
+
           <Link
             to="/faq"
             className={`mobile-link ${pathname === '/faq' ? 'home-active' : ''}`}
             onClick={toggleMenu}
+            tabIndex={isOpen ? 0 : -1}
           >
             FAQ
           </Link>
@@ -137,11 +139,11 @@ const Navbar = () => {
             to="/contact"
             className={`mobile-link ${pathname === '/contact' ? 'home-active' : ''}`}
             onClick={toggleMenu}
+            tabIndex={isOpen ? 0 : -1}
           >
             CONTACT
           </Link>
         </div>
-      )}
     </nav>
   );
 };

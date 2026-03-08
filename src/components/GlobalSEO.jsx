@@ -9,7 +9,7 @@ const GlobalSEO = () => {
     "Manoj Brothers Extension is a premium wholesale supplier of PVC flooring, PVC membrane film, soffit panels, artificial grass, and interior materials based in Gowliguda, Hyderabad, Telangana.";
 
   const siteUrl = "https://www.manojbrothersextension.com";
-  const siteImage = `${siteUrl}/assets/mb-logo.png`;
+  const siteImage = `${siteUrl}/og-image.png`;
 
   const organizationSchema = {
     "@context": "https://schema.org",
